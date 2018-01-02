@@ -1,0 +1,33 @@
+@mixin navLinksFont {
+    @import url('https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz');
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-size: 19px
+}
+
+@mixin headingFont {
+    @import url('https://fonts.googleapis.com/css?family=Rationale');
+    font-family: 'Rationale', sans-serif;
+    letter-spacing: 3px
+}
+
+@mixin btnFont {
+    @import url('https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz');
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+
+@mixin btnStyle {
+    background-color: $btnBG;
+    color: $btnColor;
+    border-radius: 0%;
+    width: 135px;
+    height: 37px;
+    line-break: 22px;
+    font-size: 18px;
+    transition: color 0.4s ease 0s, background-color 0.4s ease 0s;
+}
+
+@mixin btnHover {
+    background-color: $btnBGHover;
+    color: $btnColorHover;
+    transition: color 0.4s ease 0s, background-color 0.4s ease 0s;
+}
