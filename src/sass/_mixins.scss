@@ -1,18 +1,21 @@
-@mixin navLinksFont {
+@mixin contentFont {
     @import url('https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz');
     font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+
+@mixin bigFont {
+    @import url('https://fonts.googleapis.com/css?family=Rationale');
+    font-family: 'Rationale', sans-serif;
+}
+
+@mixin navLinksFont {
+    @include contentFont;
     font-size: 19px
 }
 
 @mixin headingFont {
-    @import url('https://fonts.googleapis.com/css?family=Rationale');
-    font-family: 'Rationale', sans-serif;
+    @include bigFont;
     letter-spacing: 3px
-}
-
-@mixin btnFont {
-    @import url('https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz');
-    font-family: 'Yanone Kaffeesatz', sans-serif;
 }
 
 @mixin btnStyle {
@@ -23,6 +26,7 @@
     height: 37px;
     line-break: 22px;
     font-size: 18px;
+    text-transform: uppercase;
     transition: color 0.4s ease 0s, background-color 0.4s ease 0s;
 }
 
@@ -30,4 +34,21 @@
     background-color: $btnBGHover;
     color: $btnColorHover;
     transition: color 0.4s ease 0s, background-color 0.4s ease 0s;
+}
+
+@mixin btnRightArrow {
+    margin-left: 8px;
+    font-size: 14px;
+}
+
+@mixin paragraphTitle {
+    @include contentFont;
+    font-size: 20px;
+    color: $paragraphColor;
+}
+
+@mixin paragraphBody {
+    @include contentFont;
+    font-size: 16px;
+    color: $paragraphColor;
 }

@@ -1,0 +1,32 @@
+@import '../../../sass/variables';
+@import '../../../sass/mixins';
+.slider {
+  background-color: #fff
+}
+
+.desc-wrapper {
+  margin-top: 42%
+}
+
+.desc-wrapper h3 {
+  @include paragraphTitle;
+}
+
+.desc-wrapper p {
+  @include paragraphBody;
+  margin-top: 43px
+}
+
+.desc-wrapper .btn {
+  @include btnStyle;
+  @include contentFont;;
+  margin-top: 30px;
+}
+
+.desc-wrapper .btn:hover {
+  @include btnHover;
+}
+
+.desc-wrapper i {
+  @include btnRightArrow;
+}
