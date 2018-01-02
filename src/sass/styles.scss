@@ -13,36 +13,3 @@ body {
   background-color: #000;
 }
 
-.navbar-brand {
-  color: $darkBlue !important;
-  @include headingFont;
-}
-
-ul.navbar-nav li a {
-  color: $lightBlue !important;
-  transition: color 0.4s ease 0s !important;
-  @include navLinksFont;
-}
-
-ul.navbar-nav li:hover a {
-  color: $darkBlue !important;
-  transition: color 0.4s ease 0s !important;
-} 
-
-/* ===== header ===== */
-.intro-wrapper h1 {
-  @include headingFont;
-  font-size: 109px;
-  letter-spacing: 4px;
-  color: #fff
-}
-
-.intro-wrapper .btn {
-    @include btnStyle;
-    @include btnFont;
-    margin-top: 30px;
-}
-
-.intro-wrapper .btn:hover {
-    @include btnHover;
-}

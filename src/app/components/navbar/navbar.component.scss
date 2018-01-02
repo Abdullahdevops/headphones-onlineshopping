@@ -1,22 +1,43 @@
+@import '../../../sass/variables';
+@import '../../../sass/mixins';
+
 .navbar {
     height: 89px;
     border-bottom: 1px solid #666;
     text-transform: uppercase;
     background-color: #000
 }
-.navbar-brand{
+
+.navbar-brand {
     padding-left: 13%;
     font-size: 26px;
+    color: $darkBlue !important;
+    @include headingFont;
 }
+
 .navbar-nav {
     padding-right: 17%;
 }
-ul.navbar-nav li.active a {
-    color: #fff !important;
-}
+
 ul.navbar-nav li {
     margin-right: 12px !important;
 }
+
+ul.navbar-nav li a {
+    color: $lightBlue !important;
+    transition: color 0.4s ease 0s !important;
+    @include navLinksFont;
+}
+
+ul.navbar-nav li:hover a {
+    color: $darkBlue !important;
+    transition: color 0.4s ease 0s !important;
+}
+
+ul.navbar-nav li.active a {
+    color: #fff !important;
+}
+
 .sbb {
     position: relative;
     width: 23px;
@@ -24,6 +45,7 @@ ul.navbar-nav li {
     overflow: hidden;
     margin-top: 4px;
 }
+
 .nav-item svg {
     position: absolute !important;
     top: 0;
@@ -31,9 +53,15 @@ ul.navbar-nav li {
     right: 0;
     left: 0;
 }
-.nav-item svg rect, polygon, polyline, circle, path{
+
+.nav-item svg rect,
+polygon,
+polyline,
+circle,
+path {
     fill: #3182B5;
 }
+
 .nav-item svg text {
     font-size: 50px;
     fill: #fff

@@ -1,3 +1,6 @@
+@import '../../../sass/variables';
+@import '../../../sass/mixins';
+
 header {
     margin-top: 90px;
 }
@@ -10,6 +13,24 @@ header .intro-wrapper {
     margin-top: 29%;
     text-transform: uppercase;
 }
+
+.intro-wrapper h1 {
+    @include headingFont;
+    font-size: 109px;
+    letter-spacing: 4px;
+    color: #fff
+}
+
+.intro-wrapper .btn {
+    @include btnStyle;
+    @include btnFont;
+    margin-top: 30px;
+}
+
+.intro-wrapper .btn:hover {
+    @include btnHover;
+}
+
 header .intro-wrapper i {
     margin-left: 8px;
     font-size: 14px;
