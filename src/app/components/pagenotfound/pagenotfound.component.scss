@@ -1,0 +1,11 @@
+@import '../../../sass/variables';
+@import '../../../sass/mixins';
+
+.not-found {
+    background-color: #fff;
+    height: 500px
+}
+.not-found h1 {
+    @include headingFont;
+    margin-top: 120px
+}
