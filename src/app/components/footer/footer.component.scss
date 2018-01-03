@@ -1,0 +1,23 @@
+@import '../../../sass/mixins';
+@import '../../../sass/variables';
+
+footer {
+    background-color: #000;
+    height: 55px;
+}
+
+.rights-wrapper {
+    margin-top: 19px;
+}
+
+.rights-wrapper h5 {
+    @include contentFont;
+    color: #fff;
+    text-transform: capitalize;
+}
+.social-wrapper {
+    margin-top: 19px;
+}
+.social-wrapper i {
+    @include socialIcons;
+  }

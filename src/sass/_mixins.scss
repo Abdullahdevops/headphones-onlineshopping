@@ -78,3 +78,9 @@
     border: none;
     cursor: pointer;
 }
+
+@mixin socialIcons {
+    margin-left: 93px;
+    font-size: 17px;
+    color: #fff
+}
