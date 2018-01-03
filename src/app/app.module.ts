@@ -13,10 +13,12 @@ import { ContactComponent } from './components/contact/contact.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ProductsComponent } from './components/products/products.component';
 import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
+import { ProductinfoComponent } from './components/productinfo/productinfo.component';
 
 const appRoutes: Routes =[
   {path: '', component: HomeComponent},
   {path: 'products', component: ProductsComponent},
+  {path: 'productinfo', component: ProductinfoComponent},
   {path: '**', component: PagenotfoundComponent}
 ];
 
@@ -31,7 +33,8 @@ const appRoutes: Routes =[
     ContactComponent,
     FooterComponent,
     ProductsComponent,
-    PagenotfoundComponent
+    PagenotfoundComponent,
+    ProductinfoComponent
   ],
   imports: [
     BrowserModule,
