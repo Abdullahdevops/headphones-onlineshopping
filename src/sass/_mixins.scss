@@ -51,12 +51,24 @@
     @include contentFont;
     color: $paragraphColor;
 }
+
+@mixin secTitle {
+    @include headingFont;
+    color: $btnBG;
+    font-size: 104px;
+    text-transform: uppercase;
+    padding-top: 90px;
+    letter-spacing: -1px;
+}
+
 @mixin titleBorder {
-    &::after {
+    &:after {
         content: '';
         width: 105px;
         height: 10px;
         background-color: $btnBG;
+        display: block;
+        margin: 58px auto;
     }
 }
 

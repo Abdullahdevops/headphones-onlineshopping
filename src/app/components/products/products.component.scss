@@ -1,0 +1,45 @@
+@import '../../../sass/variables';
+@import '../../../sass/mixins';
+.products {
+    background-color: #fff;
+    margin-top: 90px;
+    padding-bottom: 50px
+}
+
+h1.sec-title {
+    @include secTitle;
+    padding-top: 52px;
+}
+
+h1 {
+    @include titleBorder;
+}
+
+.product {
+    position: relative;
+    overflow: hidden
+}
+
+.product img {
+    width: 100%;
+    height: 100%;
+    transition-duration: 0.7s;
+}
+
+.product img:hover {
+    transform: scale(1.2, 1.2);
+}
+
+.product-desc {
+    margin-top: 13px;
+}
+
+.product-desc h5{
+    @include paragraphTitle;
+    font-size: 19px;
+}
+
+.product-desc p {
+    @include paragraphBody;
+    font-size: 15px;
+}

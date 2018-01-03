@@ -7,20 +7,12 @@
 }
 
 h1.sec-title {
-    @include headingFont;
+    @include secTitle;
     color: #fff;
-    font-size: 104px;
-    text-transform: uppercase;
-    padding-top: 90px;
 }
 
-h1::after {
-    content: '';
-    width: 105px;
-    height: 10px;
-    background-color: $btnBG;
-    display: block;
-    margin: 58px auto;
+h1 {
+    @include titleBorder;
 }
 
 .video-wrapper iframe {
