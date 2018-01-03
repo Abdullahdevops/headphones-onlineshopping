@@ -1,3 +1,48 @@
-<p>
-  contact works!
-</p>
+<section class="contact">
+  <div class="container">
+    <h1 class="sec-title text-center">
+      contact
+    </h1>
+
+
+    <form novalidate>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="name">First Name:</label>
+            <input type="text" class="form-control" name="firstName" id="name" minlength="3" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email address:</label>
+            <input type="email" class="form-control" name="email" required id="email">
+          </div>
+          <div class="form-group">
+            <label for="sub">Subject:</label>
+            <input type="text" class="form-control" name="subject" id="sub">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="msg">Message:</label>
+            <textarea class="form-control" rows="6" id="msg"></textarea>
+          </div>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary" id="formBtn">Submit</button>
+    </form>
+
+    <div class="info-wrapper text-center">
+      <img src="/assets/img/contactSymbol.png" alt="contact symbol which is circle with an equalizer">
+      <h3>I'm a title. ​Click here to edit me.</h3>
+      <p>I'm a paragraph. Click here to add your own text and edit me. I’m a great place for you to tell a story and let your users know a little more about you.to tell a story and let your users know a little more about you.users know a little more about you.</p>
+      <h6>Phone: 123-456-7890 / Email: info@headphone.com</h6>
+      <a href="#" class="btn btn-about">read about us
+          <i class="fa fa-chevron-right"></i>
+      </a>
+        <a href="#" class="btn btn-shop">shop now
+            <i class="fa fa-chevron-right"></i>
+        </a>
+    </div>
+
+  </div>
+</section>

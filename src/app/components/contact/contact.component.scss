@@ -1,0 +1,86 @@
+@import '../../../sass/variables';
+@import '../../../sass/mixins';
+.contact {
+    background-color: #fff;
+    padding-bottom: 30px
+}
+
+h1.sec-title {
+    @include headingFont;
+    color: $btnBG;
+    font-size: 104px;
+    text-transform: uppercase;
+    padding-top: 90px;
+    letter-spacing: -1px;
+}
+
+h1::after {
+    content: '';
+    width: 105px;
+    height: 10px;
+    background-color: $btnBG;
+    display: block;
+    margin: 58px auto;
+}
+
+.form-group {
+    margin-bottom: 0;
+}
+
+.form-group label {
+    @include formLabel;
+    margin-bottom: 0;
+}
+
+.form-group input {
+    height: 34px
+}
+
+#formBtn {
+    @include formSubmitBtn;
+    margin-top: 7px;
+}
+
+.info-wrapper {
+    margin-top: 40px;
+}
+
+.info-wrapper h3 {
+    @include paragraphTitle;
+    margin-top: 63px;
+  }
+  
+  .info-wrapper p {
+    @include paragraphBody;
+    margin: 43px 177px;
+  }
+
+  .info-wrapper h6 {
+      @include contentFont;
+      font-size: 17px;
+      color: $paragraphColor;
+  }
+
+.info-wrapper .btn-about {
+    text-transform: capitalize;
+    display: block;
+    color: $darkBlue;
+    margin-top: 42px;
+}
+.info-wrapper .btn-about:hover {
+    color: $btnBGHover;
+}
+
+  .info-wrapper .btn-shop {
+    @include btnStyle;
+    @include contentFont;;
+    margin-top: 30px;
+  }
+  
+  .info-wrapper .btn-shop:hover {
+    @include btnHover;
+  }
+  
+  .info-wrapper i {
+    @include btnRightArrow;
+  }
