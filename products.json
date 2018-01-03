@@ -1,0 +1,16 @@
+{
+  "products": {
+    "-Muh_aSRah7kJewq8C29": {
+      "name": "blackB2",
+      "country": "US",
+      "supplier": "Boss",
+      "price": "200.00"
+    },
+    "-Muh_bZAvh7kiazx6D13": {
+      "name": "whiteB2",
+      "country": "Italy",
+      "supplier": "Beats",
+      "price": "500.00"
+    }
+  }
+}
