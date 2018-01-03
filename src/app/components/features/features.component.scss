@@ -1,0 +1,57 @@
+@import '../../../sass/variables';
+@import '../../../sass/mixins';
+.features {
+    background: url(/assets/img/pattrenBG.png) center;
+    background-size: auto auto;
+    background-position: center center;
+}
+
+h1.sec-title {
+    @include headingFont;
+    color: #fff;
+    font-size: 104px;
+    text-transform: uppercase;
+    padding-top: 90px;
+}
+
+h1::after {
+    content: '';
+    width: 105px;
+    height: 10px;
+    background-color: $btnBG;
+    display: block;
+    margin: 58px auto;
+}
+
+.video-wrapper iframe {
+    display: block;
+    margin: auto;
+}
+
+.features-wrapper {
+    margin-top: 30px;
+}
+
+.features-wrapper .feature {
+    margin-bottom: 43px
+}
+
+.feature-img {
+    float: left;
+    margin-right: 16px
+}
+
+.feature h4 {
+    @include featuresSection;
+    text-transform: capitalize;
+    padding-top: 5px;
+    letter-spacing: 1.2px;
+    font-size: 21px;
+    margin: 0;
+}
+
+.feature p {
+    @include featuresSection;
+    display: block;
+    letter-spacing: 0.6px
+}

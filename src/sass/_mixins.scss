@@ -15,7 +15,6 @@
 
 @mixin headingFont {
     @include bigFont;
-    letter-spacing: 3px
 }
 
 @mixin btnStyle {
@@ -51,4 +50,17 @@
     @include contentFont;
     font-size: 16px;
     color: $paragraphColor;
+}
+@mixin titleBorder {
+    &::after {
+        content: '';
+        width: 105px;
+        height: 10px;
+        background-color: $btnBG;
+    }
+}
+
+@mixin featuresSection {
+    color: $featureColor;
+    @include contentFont;
 }
