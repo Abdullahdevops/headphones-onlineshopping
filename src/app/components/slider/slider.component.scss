@@ -30,3 +30,9 @@
 .desc-wrapper i {
   @include btnRightArrow;
 }
+
+.img-slider img {
+  height: 474px;
+  display: block;
+  margin: 27px auto;
+}
