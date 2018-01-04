@@ -42,7 +42,6 @@ const appRoutes: Routes = [
   {path: 'productinfo', component: ProductinfoComponent},
   {path: 'addproduct', component: AddProductComponent},
   {path: '**', component: PagenotfoundComponent}
-];
 
 @NgModule({
   declarations: [
