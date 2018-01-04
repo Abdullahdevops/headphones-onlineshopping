@@ -37,6 +37,7 @@ h1 {
 .product-desc h5{
     @include paragraphTitle;
     font-size: 19px;
+    text-transform: capitalize;
 }
 
 .product-desc p {

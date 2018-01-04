@@ -3,14 +3,11 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
-
 import { FlashMessagesModule } from 'angular2-flash-messages';
-
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabase } from 'angularfire2/database-deprecated';
 import { AngularFireAuth } from 'angularfire2/auth';
-
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -22,10 +19,14 @@ import { ContactComponent } from './components/contact/contact.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ProductsComponent } from './components/products/products.component';
 import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
-import { ProductinfoComponent } from './components/productinfo/productinfo.component';
-import { AddProductComponent } from './components/add-product/add-product.component';
+import { AddProductComponent } from './components/admin-panel/add-product/add-product.component';
+import { ProductInfoComponent } from './components/admin-panel/product-info/product-info.component';
+import { DashboardComponent } from './components/admin-panel/dashboard/dashboard.component';
+import { ListProductsComponent } from './components/admin-panel/list-products/list-products.component';
+import { LoginComponent } from './components/admin-panel/login/login.component';
 
 import { ProductsService } from './services/products.service';
+import { AuthService } from './services/auth.service';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyBrtlnRJMHelhlBEANHZb3IC3zpkMcvNgY",
@@ -39,9 +40,14 @@ export const firebaseConfig = {
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'products', component: ProductsComponent},
-  {path: 'productinfo', component: ProductinfoComponent},
-  {path: 'addproduct', component: AddProductComponent},
+  {path: 'admin-panel/login', component: LoginComponent},
+  {path: 'admin-panel/dashboard', component: LoginComponent},
+  {path: 'admin-panel/addproduct', component: AddProductComponent},
+  {path: 'admin-panel/product-info', component: ProductInfoComponent},
+  {path: 'admin-panel/list-product', component: ListProductsComponent},
+  {path: 'product/:id', component: ProductInfoComponent},
   {path: '**', component: PagenotfoundComponent}
+];
 
 @NgModule({
   declarations: [
@@ -55,8 +61,11 @@ const appRoutes: Routes = [
     FooterComponent,
     ProductsComponent,
     PagenotfoundComponent,
-    ProductinfoComponent,
-    AddProductComponent
+    AddProductComponent,
+    ProductInfoComponent,
+    DashboardComponent,
+    ListProductsComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -68,7 +77,8 @@ const appRoutes: Routes = [
   providers: [
     AngularFireAuth,
     AngularFireDatabase,
-    ProductsService
+    ProductsService,
+    AuthService
   ],
   bootstrap: [AppComponent]
 })
