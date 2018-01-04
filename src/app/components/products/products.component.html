@@ -4,45 +4,60 @@
       our
       <br> products
     </h1>
-    <div class="products-wrapper">
-      <div class="row">
-        <div class="col-md-3">
-          <div class="product">
-            <a routerLink="/productinfo"><img src="/assets/img/cyan-headphone.jpg" alt="black headphone"></a>
-          </div>
-          <div class="product-desc">
-            <h5>I'm a Product</h5>
-            <p>$19.99</p>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="product">
-            <a routerLink="/productinfo"><img src="/assets/img/cyan-headphone.jpg" alt="black headphone"></a> 
-          </div>
-          <div class="product-desc">
-            <h5>I'm a Product</h5>
-            <p>$19.99</p>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="product">
-            <a routerLink="/productinfo"><img src="/assets/img/cyan-headphone.jpg" alt="black headphone"></a>
-          </div>
-          <div class="product-desc">
-            <h5>I'm a Product</h5>
-            <p>$19.99</p>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="product">
-            <a routerLink="/productinfo"><img src="/assets/img/cyan-headphone.jpg" alt="black headphone"></a>
-          </div>
-          <div class="product-desc">
-            <h5>I'm a Product</h5>
-            <p>$19.99</p>
+    <div *ngIf="products?.length>0 ; else elseBlock">
+      <div class="products-wrapper">
+        <div class="row">
+          <div class="col-md-3" *ngFor="let item of products">
+            <div class="product">
+              <a routerLink="/productinfo">
+                <img src="./assets/img/{{item.photo}}" alt="black headphone">
+              </a>
+            </div>
+            <div class="product-desc">
+              <h5>{{item.name}}</h5>
+              <p>${{item.price}}</p>
+            </div>
           </div>
         </div>
       </div>
     </div>
+    <ng-template #elseBlock>
+      <h2 class="text-warning">OOPS ! Empty Database</h2>
+    </ng-template>
   </div>
 </section>
+
+
+<!--  <div class="col-md-3">
+    <div class="product">
+      <a routerLink="/productinfo">
+        <img src="/assets/img/cyan-headphone.jpg" alt="black headphone">
+      </a>
+    </div>
+    <div class="product-desc">
+      <h5>I'm a Product</h5>
+      <p>$19.99</p>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="product">
+      <a routerLink="/productinfo">
+        <img src="/assets/img/cyan-headphone.jpg" alt="black headphone">
+      </a>
+    </div>
+    <div class="product-desc">
+      <h5>I'm a Product</h5>
+      <p>$19.99</p>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="product">
+      <a routerLink="/productinfo">
+        <img src="/assets/img/cyan-headphone.jpg" alt="black headphone">
+      </a>
+    </div>
+    <div class="product-desc">
+      <h5>I'm a Product</h5>
+      <p>$19.99</p>
+    </div>
+  </div> -->

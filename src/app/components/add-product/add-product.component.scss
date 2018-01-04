@@ -1,0 +1,35 @@
+@import '../../../sass/variables';
+@import '../../../sass/mixins';
+
+.add-product {
+    background-color: #fff;
+    padding-bottom: 30px
+}
+
+h1.sec-title {
+    @include secTitle;
+    margin-top: 20px;
+}
+
+h1 {
+    @include titleBorder;
+}
+
+.form-group {
+    margin-bottom: 0;
+}
+
+.form-group label {
+    @include formLabel;
+    margin-bottom: 0;
+}
+
+.form-group input {
+    height: 34px
+}
+
+
+#formBtn {
+    @include formSubmitBtn;
+    margin-top: 7px;
+}
