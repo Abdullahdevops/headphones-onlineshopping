@@ -25,11 +25,11 @@ product: Product = {
 submitProduct({value, valid}: {value: Product, valid: boolean}) {
   if(!valid) {
     this.flashMessagesService.show('Please enter valid info', { cssClass: 'alert-danger'});
-    this.router.navigate(['/admin-panel/addproduct']);
+    this.router.navigate(['admin-panel/addproduct']);
   } else {
     this.productsService.addProduct(value);
     this.flashMessagesService.show('New product added successfully!', { cssClass: 'alert-success', timeout: 6000});
-    this.router.navigate(['/admin-panel/addproduct']);
+    this.router.navigate(['admin-panel/addproduct']);
   }
 }
 

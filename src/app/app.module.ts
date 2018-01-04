@@ -27,6 +27,7 @@ import { LoginComponent } from './components/admin-panel/login/login.component';
 
 import { ProductsService } from './services/products.service';
 import { AuthService } from './services/auth.service';
+import { AuthGuard } from './guards/auth.guard';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyBrtlnRJMHelhlBEANHZb3IC3zpkMcvNgY",
@@ -41,11 +42,9 @@ const appRoutes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'products', component: ProductsComponent},
   {path: 'admin-panel/login', component: LoginComponent},
-  {path: 'admin-panel/dashboard', component: LoginComponent},
-  {path: 'admin-panel/addproduct', component: AddProductComponent},
-  {path: 'admin-panel/product-info', component: ProductInfoComponent},
-  {path: 'admin-panel/list-product', component: ListProductsComponent},
-  {path: 'product/:id', component: ProductInfoComponent},
+  {path: 'admin-panel/dashboard', component: DashboardComponent, canActivate: [AuthGuard]},
+  {path: 'admin-panel/addproduct', component: AddProductComponent, canActivate: [AuthGuard]},
+  {path: 'product/:id', component: ProductInfoComponent, canActivate: [AuthGuard]},
   {path: '**', component: PagenotfoundComponent}
 ];
 
@@ -78,7 +77,8 @@ const appRoutes: Routes = [
     AngularFireAuth,
     AngularFireDatabase,
     ProductsService,
-    AuthService
+    AuthService,
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })
