@@ -1,0 +1,37 @@
+
+.sidenav {
+    width: 89px;
+    height: 100%;
+    position: fixed;
+    z-index: 0;
+    top: 89px;
+    left: 0;
+    background-color: #000;
+    overflow-x: hidden;
+    padding-top: 40px;
+  }
+  
+  
+  /* The navigation menu links */
+  
+  .sidenav a {
+    text-decoration: none;
+    display: block;
+    margin-bottom: 92px;
+    margin-left: -8px;
+    text-align: center
+  }
+  
+  .sidenav img {
+    width: 40px
+  }
+  
+  
+  /* When you mouse over the navigation links, change their color */
+  
+  .sidenav a:hover {
+    color: crimson;
+  }
+  
+  
+  

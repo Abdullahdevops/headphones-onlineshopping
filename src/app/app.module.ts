@@ -28,6 +28,7 @@ import { LoginComponent } from './components/admin-panel/login/login.component';
 import { ProductsService } from './services/products.service';
 import { AuthService } from './services/auth.service';
 import { AuthGuard } from './guards/auth.guard';
+import { SidebarComponent } from './components/admin-panel/sidebar/sidebar.component';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyBrtlnRJMHelhlBEANHZb3IC3zpkMcvNgY",
@@ -64,7 +65,8 @@ const appRoutes: Routes = [
     ProductInfoComponent,
     DashboardComponent,
     ListProductsComponent,
-    LoginComponent
+    LoginComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,

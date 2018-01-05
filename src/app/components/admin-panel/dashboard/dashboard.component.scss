@@ -1,2 +1,16 @@
 @import '../../../../sass/variables';
 @import '../../../../sass/mixins';
+.dashboard {
+  background-color: #fff;
+  margin-top: 89px;
+  padding-bottom: 42px
+}
+
+h1.sec-title {
+  @include secTitle;
+  padding-top: 92px;
+}
+
+h1 {
+  @include titleBorder;
+}
