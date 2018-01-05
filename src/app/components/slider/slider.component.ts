@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductsService } from '../../services/products.service';
-import { Product } from '../../Product';
 
 @Component({
   selector: 'app-slider',
@@ -9,13 +7,9 @@ import { Product } from '../../Product';
 })
 export class SliderComponent implements OnInit {
 
-  products: Product[];
-
-  constructor(public productsService: ProductsService) { }
+  constructor() { }
 
   ngOnInit() {
-    this.productsService.getProducts().subscribe(products => {
-      this.products = products;
-    });
   }
+
 }
