@@ -63,7 +63,7 @@ h1 {
 
   .info-wrapper .btn-shop {
     @include btnStyle;
-    @include contentFont;;
+    @include contentFont;
     margin-top: 30px;
   }
   

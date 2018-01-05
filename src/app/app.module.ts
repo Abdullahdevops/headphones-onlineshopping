@@ -18,6 +18,7 @@ import { FeaturesComponent } from './components/features/features.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ProductsComponent } from './components/products/products.component';
+import { ProductDetailsComponent } from './components/product-details/product-details.component';
 import { LoginComponent } from './components/admin-panel/login/login.component';
 import { DashboardComponent } from './components/admin-panel/dashboard/dashboard.component';
 import { AddProductComponent } from './components/admin-panel/add-product/add-product.component';
@@ -43,6 +44,7 @@ export const firebaseConfig = {
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'products', component: ProductsComponent},
+  {path: 'product-details/:id', component: ProductDetailsComponent},
   {path: 'admin-panel/login', component: LoginComponent},
   {path: 'admin-panel/dashboard', component: DashboardComponent, canActivate: [AuthGuard]},
   {path: 'admin-panel/addproduct', component: AddProductComponent, canActivate: [AuthGuard]},
@@ -70,7 +72,8 @@ const appRoutes: Routes = [
     ListProductsComponent,
     LoginComponent,
     SidebarComponent,
-    EditProductComponent
+    EditProductComponent,
+    ProductDetailsComponent
   ],
   imports: [
     BrowserModule,

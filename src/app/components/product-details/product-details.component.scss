@@ -1,0 +1,70 @@
+@import '../../../sass/variables';
+@import '../../../sass/mixins';
+
+.product-details {
+    background-color: #fff;
+    margin-top: 90px;
+}
+
+.top-nav-wrapper {
+    padding-top: 50px;
+}
+
+.top-nav-wrapper a {
+    cursor: pointer;
+    color: $btnBGHover;
+    text-decoration: none
+}
+
+.top-nav-wrapper .product-pages-nav {
+    @include productPagesNav;
+}
+.product-pages-nav span.disabled {
+    color: $featureColor;
+}
+
+.product-info {
+    margin-top: 80px
+}
+.product-info img {
+    max-width: 100%
+}
+.product-buy {
+    margin-top: 20px;
+    line-height: 44px;
+}
+
+.product-buy h3 {
+    @include contentFont;
+    text-transform: capitalize
+}
+
+.product-buy span {
+    @include contentFont;
+    color: $featureColor;
+    text-transform: capitalize
+}
+
+.product-buy p {
+    @include contentFont;
+    font-size: 19px;
+    text-transform: capitalize
+}
+
+.product-buy input {
+    width: 82px;
+    height: 43px;
+    border-radius: 0
+}
+
+.product-buy .btn {
+    @include btnStyle;    
+    width: 355px;
+    height: 52px;
+    margin-top: 13px;
+    cursor: pointer;
+}
+
+.product-buy .btn:hover {
+    @include btnHover;
+}

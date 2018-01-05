@@ -1,0 +1,46 @@
+<section class="product-details">
+  <div class="container">
+
+    <div class="top-nav-wrapper">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="product-pages-nav">
+            <a [routerLink]="['/']">home</a>
+            <span>/</span>
+            <a [routerLink]="['/products']">products</a>
+            <span>/</span>
+            <span class="disabled">
+              {{product.name}}</span>
+          </div>
+
+        </div>
+        <div class="col-md-6">
+          <span class="product-pages-nav"> &lt; pre | next &gt; </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-info">
+      <div class="row">
+        <div class="col-md-6">
+          <img src="./assets/img/{{product.photo}}" alt="blue headphone">
+        </div>
+        <div class="col-md-6">
+          <div class="product-buy">
+            <h3>{{product.name}}</h3>
+            <span>key: {{product.$key}}</span>
+            <p>country: {{product.country}}</p>
+            <p>${{product.price}}</p>
+            <span>quantity</span>
+            <form novalidate #fo="ngForm" (ngSubmit)="addToCart(fo)">
+              <input type="text" class="form-control" name="quantity" value="1" [(ngModel)]="product.quantity" #productquantity="ngModel"
+                required>
+              <button type="submit" class="btn btn-primary">add to cart</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>

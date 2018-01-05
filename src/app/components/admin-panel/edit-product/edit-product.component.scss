@@ -2,34 +2,47 @@
 @import '../../../../sass/mixins';
 
 .edit-product {
-    background-color: #fff;
-    padding-bottom: 30px
+  background-color: #fff;
+  padding-bottom: 30px
 }
 
 h1.sec-title {
-    @include secTitle;
-    margin-top: 20px;
+  @include secTitle;
+  margin-top: 20px;
 }
 
 h1 {
-    @include titleBorder;
+  @include titleBorder;
+}
+
+ .btn-back {
+  @include btnStyle;
+  @include contentFont;
+  margin-top: 30px;
+}
+
+ .btn-shop:hover {
+  @include btnHover;
+}
+
+ i {
+  @include btnRightArrow;
 }
 
 .form-group {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 .form-group label {
-    @include formLabel;
-    margin-bottom: 0;
+  @include formLabel;
+  margin-bottom: 0;
 }
 
 .form-group input {
-    height: 34px
+  height: 34px
 }
 
-
 #formBtn {
-    @include formSubmitBtn;
-    margin-top: 7px;
+  @include formSubmitBtn;
+  margin-top: 7px;
 }

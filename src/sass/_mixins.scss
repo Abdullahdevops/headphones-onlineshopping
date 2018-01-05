@@ -104,3 +104,9 @@
     padding: 0px 10px;
   }
 }
+
+@mixin productPagesNav {
+    @include contentFont;
+    text-transform: capitalize;
+    font-size: 18px
+}

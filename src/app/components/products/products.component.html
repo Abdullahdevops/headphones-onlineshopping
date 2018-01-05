@@ -9,7 +9,7 @@
         <div class="row">
           <div class="col-md-3" *ngFor="let item of products">
             <div class="product">
-              <a routerLink="/productinfo">
+              <a [routerLink]="['/product-details/'+item.$key]">
                 <img src="./assets/img/{{item.photo}}" alt="black headphone">
               </a>
             </div>
@@ -26,38 +26,3 @@
     </ng-template>
   </div>
 </section>
-
-
-<!--  <div class="col-md-3">
-    <div class="product">
-      <a routerLink="/productinfo">
-        <img src="/assets/img/cyan-headphone.jpg" alt="black headphone">
-      </a>
-    </div>
-    <div class="product-desc">
-      <h5>I'm a Product</h5>
-      <p>$19.99</p>
-    </div>
-  </div>
-  <div class="col-md-3">
-    <div class="product">
-      <a routerLink="/productinfo">
-        <img src="/assets/img/cyan-headphone.jpg" alt="black headphone">
-      </a>
-    </div>
-    <div class="product-desc">
-      <h5>I'm a Product</h5>
-      <p>$19.99</p>
-    </div>
-  </div>
-  <div class="col-md-3">
-    <div class="product">
-      <a routerLink="/productinfo">
-        <img src="/assets/img/cyan-headphone.jpg" alt="black headphone">
-      </a>
-    </div>
-    <div class="product-desc">
-      <h5>I'm a Product</h5>
-      <p>$19.99</p>
-    </div>
-  </div> -->
