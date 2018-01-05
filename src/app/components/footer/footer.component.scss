@@ -19,6 +19,8 @@ footer {
 .social-wrapper {
     margin-top: 19px;
 }
-.social-wrapper i {
-    @include socialIcons;
+.social-wrapper a {
+    margin-left: 93px;
+    font-size: 17px;
+    color: #fff
   }

@@ -1,100 +1,112 @@
+/* =======================
+========================== 0 = Fonts ======================= */
+
 @mixin contentFont {
-    @import url('https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz');
-    font-family: 'Yanone Kaffeesatz', sans-serif;
+  @import url('https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz');
+  font-family: 'Yanone Kaffeesatz', sans-serif;
 }
 
 @mixin bigFont {
-    @import url('https://fonts.googleapis.com/css?family=Rationale');
-    font-family: 'Rationale', sans-serif;
-}
-
-@mixin navLinksFont {
-    @include contentFont;
-    font-size: 19px
+  @import url('https://fonts.googleapis.com/css?family=Rationale');
+  font-family: 'Rationale', sans-serif;
 }
 
 @mixin headingFont {
-    @include bigFont;
+  @include bigFont;
 }
 
+
+/* =======================
+========================== 1 = BTN STYLES & HOVERS ======================= */
+
 @mixin btnStyle {
-    @include contentFont;
-    background-color: $btnBG;
-    color: $btnColor;
-    border-radius: 0%;
-    width: 135px;
-    height: 37px;
-    line-break: 22px;
-    font-size: 18px;
-    text-transform: uppercase;
-    transition: color 0.4s ease 0s, background-color 0.4s ease 0s;
+  @include contentFont;
+  background-color: $btnBG;
+  color: $btnColor;
+  border-radius: 0%;
+  width: 135px;
+  height: 37px;
+  line-break: 22px;
+  font-size: 18px;
+  text-transform: uppercase;
+  transition: color 0.4s ease 0s, background-color 0.4s ease 0s;
 }
 
 @mixin btnHover {
-    background-color: $btnBGHover;
-    color: $btnColorHover;
-    transition: color 0.4s ease 0s, background-color 0.4s ease 0s;
+  background-color: $btnBGHover;
+  color: $btnColorHover;
+  transition: color 0.4s ease 0s, background-color 0.4s ease 0s;
 }
 
 @mixin btnRightArrow {
-    margin-left: 8px;
-    font-size: 14px;
+  margin-left: 8px;
+  font-size: 14px;
 }
 
+
+/* =======================
+========================== 2 = Titles & Paragraphs STYLES ======================= */
+
 @mixin paragraphTitle {
-    @include contentFont;
-    font-size: 20px;
-    color: $paragraphColor;
+  @include contentFont;
+  font-size: 20px;
+  color: $paragraphColor;
 }
 
 @mixin paragraphBody {
-    @include contentFont;
-    color: $paragraphColor;
+  @include contentFont;
+  color: $paragraphColor;
 }
 
 @mixin secTitle {
-    @include headingFont;
-    color: $btnBG;
-    font-size: 104px;
-    text-transform: uppercase;
-    padding-top: 90px;
-    letter-spacing: -1px;
+  @include headingFont;
+  color: $btnBG;
+  font-size: 104px;
+  text-transform: uppercase;
+  padding-top: 90px;
+  letter-spacing: -1px;
 }
 
 @mixin titleBorder {
-    &:after {
-        content: '';
-        width: 105px;
-        height: 10px;
-        background-color: $btnBG;
-        display: block;
-        margin: 58px auto;
-    }
+  &:after {
+    content: '';
+    width: 105px;
+    height: 10px;
+    background-color: $btnBG;
+    display: block;
+    margin: 58px auto;
+  }
 }
 
 @mixin featuresSection {
-    color: $featureColor;
-    @include contentFont;
+  color: $featureColor;
+  @include contentFont;
 }
 
 
+/* =======================
+========================== 3 = Forms Inputs & BTN STYLES ======================= */
+
 @mixin formLabel {
-    @include contentFont;
-    font-size: 17px;
-    letter-spacing: 0.3px
+  @include contentFont;
+  font-size: 17px;
+  letter-spacing: 0.3px
 }
 
 @mixin formSubmitBtn {
-    @include btnStyle;
-    @include btnHover;
-    border: none;
-    cursor: pointer;
+  @include btnStyle;
+  @include btnHover;
+  border: none;
+  cursor: pointer;
 }
 
-@mixin socialIcons {
-    margin-left: 93px;
-    font-size: 17px;
-    color: #fff
+
+/* =======================
+========================== 4 = Navs STYLES & HOVERS ======================= */
+
+@mixin navLinksFont {
+  @include contentFont;
+  font-size: 19px
 }
 
 @mixin sidebarMain {
@@ -106,7 +118,7 @@
 }
 
 @mixin productPagesNav {
-    @include contentFont;
-    text-transform: capitalize;
-    font-size: 18px
+  @include contentFont;
+  text-transform: capitalize;
+  font-size: 18px
 }
