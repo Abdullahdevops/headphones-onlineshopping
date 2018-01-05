@@ -1,3 +1,40 @@
-<p>
-  list-products works!
-</p>
+<section class="list-products">
+  <div class="container">
+
+    <app-sidebar></app-sidebar>
+
+    <div id="main">
+      <h1 class="sec-title text-center">
+        all products
+      </h1>
+
+      <div *ngIf="products?.length>0 ; else elseBlock">
+        <table class="table table-bordered table-dark">
+          <thead>
+            <tr>
+              <th scope="col">Product Name</th>
+              <th scope="col">Product Country</th>
+              <th scope="col">Product Price</th>
+              <th>manage</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of products">
+              <td>{{item.name}}</td>
+              <td>{{item.country}}</td>
+              <td>{{item.price}}</td>
+              <td>
+                <a class="btn btn-primary" [routerLink]="['/product/'+item.$key]">
+                  <i class="fa fa-info-circle"></i> More Info</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <ng-template #elseBlock>
+        <h2 class="text-warning">OOPS ! Empty Database</h2>
+      </ng-template>
+
+    </div>
+  </div>
+</section>

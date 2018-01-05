@@ -18,17 +18,18 @@ import { FeaturesComponent } from './components/features/features.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ProductsComponent } from './components/products/products.component';
-import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
+import { LoginComponent } from './components/admin-panel/login/login.component';
+import { DashboardComponent } from './components/admin-panel/dashboard/dashboard.component';
 import { AddProductComponent } from './components/admin-panel/add-product/add-product.component';
 import { ProductInfoComponent } from './components/admin-panel/product-info/product-info.component';
-import { DashboardComponent } from './components/admin-panel/dashboard/dashboard.component';
+import { SidebarComponent } from './components/admin-panel/sidebar/sidebar.component';
 import { ListProductsComponent } from './components/admin-panel/list-products/list-products.component';
-import { LoginComponent } from './components/admin-panel/login/login.component';
+import { EditProductComponent } from './components/admin-panel/edit-product/edit-product.component';
+import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
 
 import { ProductsService } from './services/products.service';
 import { AuthService } from './services/auth.service';
 import { AuthGuard } from './guards/auth.guard';
-import { SidebarComponent } from './components/admin-panel/sidebar/sidebar.component';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyBrtlnRJMHelhlBEANHZb3IC3zpkMcvNgY",
@@ -45,7 +46,9 @@ const appRoutes: Routes = [
   {path: 'admin-panel/login', component: LoginComponent},
   {path: 'admin-panel/dashboard', component: DashboardComponent, canActivate: [AuthGuard]},
   {path: 'admin-panel/addproduct', component: AddProductComponent, canActivate: [AuthGuard]},
+  {path: 'admin-panel/list-products', component: ListProductsComponent, canActivate: [AuthGuard]},
   {path: 'product/:id', component: ProductInfoComponent, canActivate: [AuthGuard]},
+  {path: 'edit-product/:id', component: EditProductComponent, canActivate: [AuthGuard]},
   {path: '**', component: PagenotfoundComponent}
 ];
 
@@ -66,7 +69,8 @@ const appRoutes: Routes = [
     DashboardComponent,
     ListProductsComponent,
     LoginComponent,
-    SidebarComponent
+    SidebarComponent,
+    EditProductComponent
   ],
   imports: [
     BrowserModule,

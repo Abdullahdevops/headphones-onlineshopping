@@ -21,4 +21,17 @@ export class ProductsService {
     return this.products.push(product);
   }
 
+  getProduct(id: string) {
+    this.product = this.db.object('/products/' + id) as FirebaseObjectObservable<Product>;
+    return this.product;
+  }
+
+  updateProduct(id: string, product: Product) {
+    return this.products.update(id, product);
+  }
+
+  deleteProduct(id: string){
+    return this.products.remove(id);
+  }
+
 }

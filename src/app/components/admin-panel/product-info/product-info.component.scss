@@ -1,0 +1,23 @@
+@import '../../../../sass/variables';
+@import '../../../../sass/mixins';
+.product-info {
+  background-color: #fff;
+  padding-bottom: 30px
+}
+
+h1.sec-title {
+  @include secTitle;
+  margin-top: 20px;
+}
+
+h1 {
+  @include titleBorder;
+}
+
+table td:last-child {
+  width: 140px
+}
+
+table td {
+  text-transform: capitalize
+}
