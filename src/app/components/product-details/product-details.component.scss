@@ -68,3 +68,65 @@
 .product-buy .btn:hover {
     @include btnHover;
 }
+
+.modal-dialog {
+    width: 400px
+}
+
+.modal-header {
+    background-color: #000;
+}
+
+.modal-header h4 {
+    color: #fff;
+    @include bigFont;
+    text-align: center;
+    font-size: 30px;
+}
+
+.modal-header button {
+    color: #fff;
+    cursor: pointer
+}
+.modal-header .close{
+    padding: 24px
+}
+.modal-body img {
+    width: 80px;
+    height: 100px;
+    margin-left: 41px;
+}
+
+.modal-body .product-info {
+    margin-top: 16px
+}
+
+.modal-body .product-buy {
+    margin-top: 11px;
+    line-height: 28px;
+}
+
+.modal-body .total {
+    margin-top: 100px;
+    margin-left: 42px;
+    @include contentFont;
+    font-size: 19px;
+}
+
+.modal-body .total h5 {
+    font-size: 22px;
+}
+
+.modal-footer .btn {
+    @include btnStyle;    
+    width: 355px;
+    height: 52px;
+    margin-top: 13px;
+    margin: auto;
+    line-height: 42px;
+    cursor: pointer;
+}
+
+.modal-footer .btn:hover {
+    @include btnHover;
+}

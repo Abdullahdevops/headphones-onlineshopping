@@ -3,5 +3,7 @@ export interface Product {
     name?:string;
     country?:string;
     price?:number;
+    quantity?:number;
+    desiredQuantity?:number;
     photo?:HTMLImageElement;
 }

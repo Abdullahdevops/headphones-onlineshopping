@@ -31,6 +31,7 @@ import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.co
 import { ProductsService } from './services/products.service';
 import { AuthService } from './services/auth.service';
 import { AuthGuard } from './guards/auth.guard';
+import { CartComponent } from './components/cart/cart.component';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyBrtlnRJMHelhlBEANHZb3IC3zpkMcvNgY",
@@ -73,7 +74,8 @@ const appRoutes: Routes = [
     LoginComponent,
     SidebarComponent,
     EditProductComponent,
-    ProductDetailsComponent
+    ProductDetailsComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,

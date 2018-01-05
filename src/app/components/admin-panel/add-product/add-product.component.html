@@ -25,9 +25,16 @@
 
         <div class="form-group">
           <label for="PriceLabel">Product Price</label>
-          <input type="text" class="form-control" id="PriceLabel" name="price" placeholder="Enter Product Price" [(ngModel)]="product.price"
+          <input type="number" class="form-control" id="PriceLabel" name="price" placeholder="Enter Product Price" [(ngModel)]="product.price"
             #productprice="ngModel" required>
           <div *ngIf="productprice.errors?.required && productprice.touched" class="alert alert-danger">Product Price is Required</div>
+        </div>
+
+        <div class="form-group">
+          <label for="quantityLabel">Product Quantity</label>
+          <input type="number" class="form-control" id="quantityLabel" name="quantity" placeholder="Enter Product Quantity" [(ngModel)]="product.quantity"
+            #productquantity="ngModel" required>
+          <div *ngIf="productquantity.errors?.required && productquantity.touched" class="alert alert-danger">Product Quantity is Required</div>
         </div>
 
         <div class="form-group">

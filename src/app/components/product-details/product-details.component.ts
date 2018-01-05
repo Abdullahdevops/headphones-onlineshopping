@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductsService } from '../../services/products.service';
 import { Product } from '../../Product';
+import { Order } from '../../Order';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 
 @Component({
@@ -12,6 +13,9 @@ export class ProductDetailsComponent implements OnInit {
 
   id: string;
   product: Product;
+  order: Order = {
+    desiredQty: 0
+  };
 
   constructor(
     public productsService: ProductsService,
@@ -24,5 +28,6 @@ export class ProductDetailsComponent implements OnInit {
     this.productsService.getProduct(this.id).subscribe(product => {
       this.product = product;
     });
-  }
+  }  
+
 }

@@ -14,7 +14,8 @@ export class AddProductComponent implements OnInit {
 product: Product = {
   name: "",
   country: "",
-  price: 0
+  price: 0,
+  quantity: 0
 };
 
   constructor(public router: Router, public productsService: ProductsService, public flashMessagesService: FlashMessagesService) { }
