@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductsService } from '../../../services/products.service';
+import { FlashMessagesService } from "angular2-flash-messages";
 import { Product } from '../../../Product';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-list-products',
@@ -11,7 +13,7 @@ export class ListProductsComponent implements OnInit {
 
   products: Product[];
 
-  constructor(public productsService: ProductsService) { 
+  constructor(public router: Router, public productsService: ProductsService, public flashMessagesService: FlashMessagesService) { 
     this.productsService.getProducts().subscribe(products => {
       this.products = products;
     });

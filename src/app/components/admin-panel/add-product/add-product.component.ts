@@ -18,9 +18,18 @@ product: Product = {
   quantity: 0
 };
 
-  constructor(public router: Router, public productsService: ProductsService, public flashMessagesService: FlashMessagesService) { }
+searchValue:string = null;
+
+  constructor(public router: Router, public productsService: ProductsService, public flashMessagesService: FlashMessagesService) {
+    
+   }
 
   ngOnInit() {
+  }
+
+
+  clearSearch() {
+    this.searchValue = ' ';
   }
 
 submitProduct({value, valid}: {value: Product, valid: boolean}) {
@@ -30,8 +39,10 @@ submitProduct({value, valid}: {value: Product, valid: boolean}) {
   } else {
     this.productsService.addProduct(value);
     this.flashMessagesService.show('New product added successfully!', { cssClass: 'alert-success', timeout: 3000});
+    this.clearSearch();
     this.router.navigate(['admin-panel/addproduct']);
   }
 }
+
 
 }

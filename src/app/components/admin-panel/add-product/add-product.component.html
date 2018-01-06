@@ -11,28 +11,28 @@
       <form novalidate #fo="ngForm" (ngSubmit)="submitProduct(fo)">
         <div class="form-group">
           <label for="NameLabel">Product Name</label>
-          <input type="text" class="form-control" id="NameLabel" name="name" placeholder="Enter Product Name" [(ngModel)]="product.name"
+          <input type="text" class="form-control" id="NameLabel" name="name" placeholder="Enter Product Name" [value]="searchValue" [(ngModel)]="product.name"
             #productname="ngModel" required>
           <div *ngIf="productname.errors?.required && productname.touched" class="alert alert-danger">Product Name is Required</div>
         </div>
 
         <div class="form-group">
           <label for="CountryLabel">Product Country</label>
-          <input type="text" class="form-control" id="CountryLabel" name="country" placeholder="Enter Product Country" [(ngModel)]="product.country"
+          <input type="text" class="form-control" id="CountryLabel" name="country" placeholder="Enter Product Country" [value]="searchValue" [(ngModel)]="product.country"
             #productcountry="ngModel" required>
           <div *ngIf="productcountry.errors?.required && productcountry.touched" class="alert alert-danger">Product Country is Required</div>
         </div>
 
         <div class="form-group">
           <label for="PriceLabel">Product Price</label>
-          <input type="number" class="form-control" id="PriceLabel" name="price" placeholder="Enter Product Price" [(ngModel)]="product.price"
+          <input type="number" class="form-control" id="PriceLabel" name="price" placeholder="Enter Product Price" [value]="searchValue" [(ngModel)]="product.price"
             #productprice="ngModel" required>
           <div *ngIf="productprice.errors?.required && productprice.touched" class="alert alert-danger">Product Price is Required</div>
         </div>
 
         <div class="form-group">
           <label for="quantityLabel">Product Quantity</label>
-          <input type="number" class="form-control" id="quantityLabel" name="quantity" placeholder="Enter Product Quantity" [(ngModel)]="product.quantity"
+          <input type="number" class="form-control" id="quantityLabel" name="quantity" placeholder="Enter Product Quantity" [value]="searchValue" [(ngModel)]="product.quantity"
             #productquantity="ngModel" required>
           <div *ngIf="productquantity.errors?.required && productquantity.touched" class="alert alert-danger">Product Quantity is Required</div>
         </div>
@@ -40,18 +40,19 @@
         <div class="form-group">
           <label for="PhotoLabel">Product Photo</label>
           <input type="text" class="form-control upload" id="PhotoLabel" name="photo" placeholder="Enter Photo name ex car.jpg" accept=".jpg, .jpeg, .png"
-            [(ngModel)]="product.photo" #productphoto="ngModel" required>
+          [value]="searchValue" [(ngModel)]="product.photo" #productphoto="ngModel" required>
           <div *ngIf="productphoto.errors?.required && productphoto.touched" class="alert alert-danger">Product Photo is Required</div>
         </div>
 
         <div class="form-group">
           <label for="zoomedPhotoLabel">Product zoomed Photo</label>
-          <input type="text" class="form-control upload" id="zoomedPhotoLabel" name="zoomedPhoto" placeholder="Enter Photo name ex car.jpg" accept=".jpg, .jpeg, .png"
-            [(ngModel)]="product.zoomedPhoto" #productzoomedPhoto="ngModel" required>
+          <input type="text" class="form-control upload" id="zoomedPhotoLabel" name="zoomedPhoto" placeholder="Enter Photo name ex car.jpg"
+            accept=".jpg, .jpeg, .png" [value]="searchValue" [(ngModel)]="product.zoomedPhoto" #productzoomedPhoto="ngModel" required>
           <div *ngIf="productzoomedPhoto.errors?.required && productzoomedPhoto.touched" class="alert alert-danger">Product zoomed Photo is Required</div>
         </div>
+        
         <button type="submit" class="btn btn-primary" id="formBtn">Submit</button>
-      </form>
+      </form> 
     </div>
 
   </div>

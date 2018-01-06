@@ -14,6 +14,8 @@
             <th scope="col">Product Name</th>
             <th scope="col">Product Country</th>
             <th scope="col">Product Price</th>
+            <th scope="col">Product Photo</th>
+            <th scope="col">Product Zoomed Photo</th>
             <th scope="col">$Key</th>
           </tr>
         </thead>
@@ -22,6 +24,8 @@
             <td>{{product.name}}</td>
             <td>{{product.country}}</td>
             <td>{{product.price}}</td>
+            <td><img src="./assets/img/{{product.photo}}" class="normal-img" alt="product headphone"></td>
+            <td><img src="./assets/img/{{product.zoomedPhoto}}" class="normal-img" alt="zoomed headphone"></td>
             <td>{{product.$key}}</td>
           </tr>
         </tbody>
