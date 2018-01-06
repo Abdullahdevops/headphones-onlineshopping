@@ -14,6 +14,20 @@
 
 <body>
   <app-root></app-root>
+  <script>
+    $(function () {
+      $('a').click(function () {
+        $(window).scrollTop(0);
+      });
+    $('.navbar li a').click(function () {          
+          $(this).parent().addClass('active').siblings().removeClass('active');         
+      });
+      $('.navbar li a').click(function () {          
+          $(this).parent().addClass('active').siblings().removeClass('active');         
+      });
+    });
+  </script>
+  
 </body>
 
 </html>
