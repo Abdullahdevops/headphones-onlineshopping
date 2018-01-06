@@ -39,8 +39,8 @@ submitProduct({value, valid}: {value: Product, valid: boolean}) {
   } else {
     this.productsService.addProduct(value);
     this.flashMessagesService.show('New product added successfully!', { cssClass: 'alert-success', timeout: 3000});
-    this.clearSearch();
     this.router.navigate(['admin-panel/addproduct']);
+    this.clearSearch();
   }
 }
 

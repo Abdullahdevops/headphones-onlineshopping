@@ -1,6 +1,8 @@
+@import '../../../../sass/variables';
+@import '../../../../sass/mixins';
 
 .sidenav {
-    width: 89px;
+    width: 105px;
     height: 100%;
     position: fixed;
     z-index: 0;
@@ -17,15 +19,26 @@
   .sidenav a {
     text-decoration: none;
     display: block;
-    margin-bottom: 92px;
+    margin-bottom: 62px;
     margin-left: -8px;
     text-align: center
   }
-  
+
+  .sidenav i {
+    font-size: 44px
+  }
+
   .sidenav img {
     width: 40px
   }
   
+  .sidenav p {
+    @include contentFont;
+    margin-top: 17px;
+    text-transform: uppercase;
+    color: $darkBlue
+
+  }
   
   /* When you mouse over the navigation links, change their color */
   
