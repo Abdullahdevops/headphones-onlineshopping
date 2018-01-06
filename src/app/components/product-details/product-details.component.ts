@@ -14,7 +14,7 @@ export class ProductDetailsComponent implements OnInit {
   id: string;
   product: Product;
   order: Order = {
-    desiredQty: 0
+    desiredQty: 1
   };
 
   constructor(

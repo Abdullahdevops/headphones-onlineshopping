@@ -33,7 +33,7 @@
             <p>${{product.price}}</p>
             <span>quantity</span>
             <form novalidate>
-              <input type="number" class="form-control" name="desiredQty" [(ngModel)]="order.desiredQty" #orderdesiredQty="ngModel"
+              <input type="number" class="form-control" name="desiredQty" min="1" max="20" [(ngModel)]="order.desiredQty" #orderdesiredQty="ngModel"
                 required>
               <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#myModal">add to cart</button>
             </form>

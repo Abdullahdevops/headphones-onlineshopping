@@ -4,6 +4,7 @@
 .product-details {
     background-color: #fff;
     margin-top: 90px;
+    padding-bottom: 53px
 }
 
 .top-nav-wrapper {
@@ -56,12 +57,21 @@
     height: 43px;
     border-radius: 0
 }
-
+/* Remove controls from Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+  }
+  
+  /* Re-applies the controls on :hover and :focus */
+  input[type="number"]:hover,
+  input[type="number"]:focus {
+    -moz-appearance: number-input;
+  }
 .product-buy .btn {
     @include btnStyle;    
     width: 355px;
     height: 52px;
-    margin-top: 13px;
+    margin-top: 19px;
     cursor: pointer;
 }
 
