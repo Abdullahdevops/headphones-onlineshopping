@@ -20,4 +20,12 @@ export class ListProductsComponent implements OnInit {
   ngOnInit() {
   }
 
+  deleteAllProducts(){
+    if(confirm("Are you sure?!")){
+      this.productsService.deleteAllProducts();
+      this.flashMessagesService.show("Producst deleted successfully", { cssClass: 'alert-success', timeout: 3000});
+      this.router.navigate(['/admin-panel/list-products']);
+    }
+  }
+
 }

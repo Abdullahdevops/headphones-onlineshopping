@@ -34,4 +34,8 @@ export class ProductsService {
     return this.products.remove(id);
   }
 
+  deleteAllProducts(){
+    return this.products.remove();
+  }
+
 }

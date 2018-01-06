@@ -10,7 +10,8 @@
           <div class="col-md-3" *ngFor="let item of products">
             <div class="product">
               <a [routerLink]="['/product-details/'+item.$key]">
-                <img src="./assets/img/{{item.photo}}" alt="black headphone">
+                <img src="./assets/img/{{item.photo}}" class="normal-img" alt="product headphone">
+                <img src="./assets/img/{{item.zoomedPhoto}}" class="zoomed-img" alt="zoomed headphone">
               </a>
             </div>
             <div class="product-desc">
