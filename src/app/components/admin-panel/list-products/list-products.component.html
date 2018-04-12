@@ -10,7 +10,7 @@
 
       <div *ngIf="products?.length>0 ; else elseBlock">
         <button href="#" (click)="deleteAllProducts()" class="btn btn-danger">
-            <i class="fa fa-info-circle"></i> Delete All
+          <i class="fa fa-info-circle"></i> Delete All
         </button>
         <table class="table table-bordered table-dark">
           <thead>
@@ -28,8 +28,12 @@
               <td>{{item.name}}</td>
               <td>{{item.country}}</td>
               <td>{{item.price}}</td>
-              <td><img src="./assets/img/{{item.photo}}" class="normal-img" alt="product headphone"></td>
-              <td><img src="./assets/img/{{item.zoomedPhoto}}" class="normal-img" alt="zoomed headphone"></td>
+              <td>
+                <img src="./assets/img/{{item.photo}}" class="normal-img" alt="product headphone">
+              </td>
+              <td>
+                <img src="./assets/img/{{item.zoomedPhoto}}" class="normal-img" alt="zoomed headphone">
+              </td>
               <td>
                 <a class="btn btn-primary" [routerLink]="['/product/'+item.$key]">
                   <i class="fa fa-info-circle"></i> More Info</a>
@@ -39,7 +43,7 @@
         </table>
       </div>
       <ng-template #elseBlock>
-        <h2 class="text-warning">OOPS ! Empty Database</h2>
+        <h2 class="text-warning">Weak Connection</h2>
       </ng-template>
 
     </div>

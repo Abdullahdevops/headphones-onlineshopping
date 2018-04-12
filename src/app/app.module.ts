@@ -34,12 +34,12 @@ import { AuthGuard } from './guards/auth.guard';
 import { CartComponent } from './components/cart/cart.component';
 
 export const firebaseConfig = {
-  apiKey: "AIzaSyBrtlnRJMHelhlBEANHZb3IC3zpkMcvNgY",
-  authDomain: "headphones-6a918.firebaseapp.com",
-  databaseURL: "https://headphones-6a918.firebaseio.com",
-  projectId: "headphones-6a918",
-  storageBucket: "headphones-6a918.appspot.com",
-  messagingSenderId: "631364083549"
+  apiKey: 'AIzaSyBrtlnRJMHelhlBEANHZb3IC3zpkMcvNgY',
+  authDomain: 'headphones-6a918.firebaseapp.com',
+  databaseURL: 'https://headphones-6a918.firebaseio.com',
+  projectId: 'headphones-6a918',
+  storageBucket: 'headphones-6a918.appspot.com',
+  messagingSenderId: '631364083549'
 };
 
 const appRoutes: Routes = [

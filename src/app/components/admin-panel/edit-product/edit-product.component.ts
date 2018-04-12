@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductsService } from '../../../services/products.service';
 import { Product } from '../../../Product';
-import { FlashMessagesService } from "angular2-flash-messages";
+import { FlashMessagesService } from 'angular2-flash-messages';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 
 
@@ -13,10 +13,10 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 export class EditProductComponent implements OnInit {
 
   id: string;
-  product: Product ={
-    name:"",
-    country:"",
-    price:0
+  product: Product = {
+    name: '',
+    country: '',
+    price: 0
   };
 
   constructor(
@@ -28,13 +28,13 @@ export class EditProductComponent implements OnInit {
 
   ngOnInit() {
     this.id = this.activatedRouter.snapshot.params['id'];
-    this.productsService.getProduct(this.id).subscribe(product=>{
-      this.product =product;
+    this.productsService.getProduct(this.id).subscribe(product => {
+      this.product = product;
     });
   }
 
   updateProduct({value, valid}: {value: Product, valid: boolean}) {
-    if(!valid){
+    if (!valid) {
       this.flashMessagesService.show('Please enter valid info', { cssClass: 'alert-danger'});
       this.router.navigate(['/edit-product/' + this.id]);
     } else {

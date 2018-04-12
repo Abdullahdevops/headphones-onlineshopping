@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductsService } from '../../../services/products.service';
 import { Product } from '../../../Product';
-import { FlashMessagesService } from "angular2-flash-messages";
+import { FlashMessagesService } from 'angular2-flash-messages';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 
 @Component({
@@ -28,10 +28,10 @@ export class ProductInfoComponent implements OnInit {
     });
   }
 
-  deleteProduct(){
-    if(confirm("Are you sure?!")){
+  deleteProduct() {
+    if (confirm('Are you sure?!')) {
       this.productsService.deleteProduct(this.id);
-      this.flashMessagesService.show("Product deleted successfully", { cssClass: 'alert-success', timeout: 3000});
+      this.flashMessagesService.show('Product deleted successfully', { cssClass: 'alert-success', timeout: 3000});
       this.router.navigate(['/admin-panel/list-products']);
     }
   }

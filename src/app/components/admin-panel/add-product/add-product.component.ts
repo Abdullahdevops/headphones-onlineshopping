@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Product } from '../../../Product';
 import { ProductsService } from '../../../services/products.service';
-import { FlashMessagesService } from "angular2-flash-messages";
+import { FlashMessagesService } from 'angular2-flash-messages';
 
 @Component({
   selector: 'app-add-product',
@@ -12,17 +12,15 @@ import { FlashMessagesService } from "angular2-flash-messages";
 export class AddProductComponent implements OnInit {
 
 product: Product = {
-  name: "",
-  country: "",
+  name: '',
+  country: '',
   price: 0,
   quantity: 0
 };
 
-searchValue:string = null;
+searchValue: string = null;
 
-  constructor(public router: Router, public productsService: ProductsService, public flashMessagesService: FlashMessagesService) {
-    
-   }
+  constructor(public router: Router, public productsService: ProductsService, public flashMessagesService: FlashMessagesService) {}
 
   ngOnInit() {
   }
@@ -33,7 +31,7 @@ searchValue:string = null;
   }
 
 submitProduct({value, valid}: {value: Product, valid: boolean}) {
-  if(!valid) {
+  if (!valid) {
     this.flashMessagesService.show('Please enter valid info', { cssClass: 'alert-danger'});
     this.router.navigate(['admin-panel/addproduct']);
   } else {
