@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/database-deprecated';
-import { Observable } from 'rxjs'; 
+import { Observable } from 'rxjs';
 import { Product } from '../Product';
 
 @Injectable()
@@ -30,11 +30,11 @@ export class ProductsService {
     return this.products.update(id, product);
   }
 
-  deleteProduct(id: string){
+  deleteProduct(id: string) {
     return this.products.remove(id);
   }
 
-  deleteAllProducts(){
+  deleteAllProducts() {
     return this.products.remove();
   }
 

@@ -1,4 +1,4 @@
 export interface Order {
     desiredQty?: number;
-    subTotal?: number
-  }
+    subTotal?: number;
+}

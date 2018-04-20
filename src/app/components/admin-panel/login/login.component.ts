@@ -21,17 +21,16 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
   }
-  
-  submitLogin(){
+  submitLogin() {
     this.authService.login(this.email, this.password)
-    .then((res)=>{
+    .then((res) => {
       this.flashMessagesService.show('You are logged in !', { cssClass: 'alert-success', timeout: 3000});
       this.router.navigate(['/admin-panel/dashboard']);
     })
     .catch((err) => {
       this.flashMessagesService.show(err.message, { cssClass: 'alert-danger', timeout: 3000});
         this.router.navigate(['/admin-panel/login']);
-    })
+    });
   }
 
 }

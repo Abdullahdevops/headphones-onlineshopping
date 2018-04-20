@@ -45,40 +45,42 @@
     <div class="modal fade" id="myModal">
       <div class="modal-dialog">
         <div class="modal-content">
-    
+
           <!-- Modal Header -->
           <div class="modal-header">
             <h4 class="modal-title">Cart</h4>
-            <button type="button" class="close" data-dismiss="modal"><i class="fa fa-times"></i></button>
+            <button type="button" class="close" data-dismiss="modal">
+              <i class="fa fa-times"></i>
+            </button>
           </div>
-    
+
           <!-- Modal body -->
           <div class="modal-body">
-              <div class="product-info">
-                  <div class="row">
-                    <div class="col-md-6">
-                      <img src="./assets/img/{{product.photo}}" alt="blue headphone">
-                      <div class="total">
-                        <h5>subtotal</h5>
-                        <p>${{order.desiredQty*product.price}}</p>
-                      </div>
-                    </div>
-                    <div class="col-md-6">
-                      <div class="product-buy">
-                        <h3>{{product.name}}</h3>
-                        <span>QTY: {{order.desiredQty}}</span>
-                        <p>${{product.price}}</p>
-                      </div>
-                    </div>
+            <div class="product-info">
+              <div class="row">
+                <div class="col-md-6">
+                  <img src="./assets/img/{{product.photo}}" alt="blue headphone">
+                  <div class="total">
+                    <h5>subtotal</h5>
+                    <p>${{order.desiredQty*product.price}}</p>
                   </div>
                 </div>
+                <div class="col-md-6">
+                  <div class="product-buy">
+                    <h3>{{product.name}}</h3>
+                    <span>QTY: {{order.desiredQty}}</span>
+                    <p>${{product.price}}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-    
+
           <!-- Modal footer -->
           <div class="modal-footer">
-              <a class="btn btn-primary">view cart</a>
+            <a class="btn btn-primary">view cart</a>
           </div>
-    
+
         </div>
       </div>
     </div>

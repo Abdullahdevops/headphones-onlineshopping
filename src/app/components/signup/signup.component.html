@@ -1,0 +1,21 @@
+<div class="login">
+  <div class="container">
+    <h1 class="sec-title text-center">
+      login
+    </h1>
+
+    <form (submit)="submitRegister()">
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" class="form-control" name="email" id="email" required [(ngModel)]="email">
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" class="form-control" name="password" id="password" required [(ngModel)]="password">
+      </div>
+
+      <button type="submit" class="btn btn-info btn-block" id="formBtn" value="Login">Register</button>
+    </form>
+  </div>
+</div>

@@ -1,14 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
 import { FlashMessagesModule } from 'angular2-flash-messages';
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabase } from 'angularfire2/database-deprecated';
 import { AngularFireAuth } from 'angularfire2/auth';
 
+import { FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
@@ -32,6 +31,7 @@ import { ProductsService } from './services/products.service';
 import { AuthService } from './services/auth.service';
 import { AuthGuard } from './guards/auth.guard';
 import { CartComponent } from './components/cart/cart.component';
+import { SignupComponent } from './components/signup/signup.component';
 
 export const firebaseConfig = {
   apiKey: 'AIzaSyBrtlnRJMHelhlBEANHZb3IC3zpkMcvNgY',
@@ -47,6 +47,8 @@ const appRoutes: Routes = [
   {path: 'products', component: ProductsComponent},
   {path: 'product-details/:id', component: ProductDetailsComponent},
   {path: 'admin-panel/login', component: LoginComponent},
+  {path: 'signup', component: SignupComponent},
+  {path: 'cart', component: CartComponent},
   {path: 'admin-panel/dashboard', component: DashboardComponent, canActivate: [AuthGuard]},
   {path: 'admin-panel/addproduct', component: AddProductComponent, canActivate: [AuthGuard]},
   {path: 'admin-panel/list-products', component: ListProductsComponent, canActivate: [AuthGuard]},
@@ -75,7 +77,8 @@ const appRoutes: Routes = [
     SidebarComponent,
     EditProductComponent,
     ProductDetailsComponent,
-    CartComponent
+    CartComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
