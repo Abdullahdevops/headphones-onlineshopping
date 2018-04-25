@@ -15,7 +15,11 @@ import { CartService } from '../../services/cart.service';
 export class ProductDetailsComponent implements OnInit {
 
   id: string;
-  product: Product;
+  product: Product = {
+    name: '',
+    country: '',
+    price: 0
+  };
   order: Order = {
     desiredQty: 1
   };
@@ -55,19 +59,28 @@ export class ProductDetailsComponent implements OnInit {
   }
 
   goToCheckOut (userProduct) {
-    userProduct = {
-      productKey: this.product.$key,
-      productName: this.product.name,
-      productPrice: this.product.price,
-      productQuantity: this.order.desiredQty,
-      productPhoto: this.product.photo,
-      total: this.order.desiredQty * this.product.price,
-      userEmail: this.isUserLoggedin,
-    };
+    if (this.product.quantity > this.order.desiredQty) {
+      this.product.quantity -= this.order.desiredQty;
+      userProduct = {
+        productKey: this.product.$key,
+        productName: this.product.name,
+        productPrice: this.product.price,
+        productQuantity: this.order.desiredQty,
+        productPhoto: this.product.photo,
+        total: this.order.desiredQty * this.product.price,
+        userEmail: this.isUserLoggedin,
+      };
+      this.product = {
+        quantity: this.product.quantity
+      };
+    console.log('rest = ' + this.product);
+    this.productsService.updateProduct(this.id, this.product);
     this.cartService.addUserProducts(userProduct);
     this.flashMessagesService.show('product added succefully!', { cssClass: 'alert-success', timeout: 3000});
-    console.log(userProduct);
     // this.router.navigate(['/cart']);
+    } else {
+      this.flashMessagesService.show('Sorry canot add product not enough quantity!', { cssClass: 'alert-danger', timeout: 3000});
+    }
   }
 
 }

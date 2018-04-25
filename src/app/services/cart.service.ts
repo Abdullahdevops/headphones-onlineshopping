@@ -32,4 +32,13 @@ export class CartService {
     }});
     return this.carts;
   }
+
+  getUserProduct(id: string) {
+    this.cart = this.db.object('/carts/' + id) as FirebaseObjectObservable<Cart>;
+    return this.cart;
+  }
+
+  deleteUserProduct(id: string) {
+    return this.carts.remove(id);
+  }
 }

@@ -14,7 +14,7 @@
             <th scope="col">Product Quantity</th>
             <th scope="col">Total</th>
             <th scope="col">User Email</th>
-            <!-- <th>manage</th> -->
+            <th>manage</th>
           </tr>
         </thead>
         <tbody>
@@ -27,10 +27,10 @@
             <td>{{item.productQuantity}}</td>
             <td>{{item.total}}</td>
             <td>{{item.userEmail}}</td>
-            <!-- <td>
-              <a class="btn btn-primary" [routerLink]="['/product/'+item.$key]">
-                <i class="fa fa-info-circle"></i> More Info</a>
-            </td> -->
+            <td>
+              <a class="btn btn-primary" (click)="deleteProduct()">
+                <i class="fa fa-info-circle"></i>Remove</a>
+            </td>
           </tr>
         </tbody>
       </table>

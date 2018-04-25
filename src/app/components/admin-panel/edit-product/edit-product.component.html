@@ -34,6 +34,13 @@
         </div>
 
         <div class="form-group">
+          <label for="quantityLabel">Product Quantity</label>
+          <input type="number" class="form-control" id="quantityLabel" name="quantity" placeholder="Enter Product Quantity" [value]="searchValue"
+            [(ngModel)]="product.quantity" #productquantity="ngModel" required>
+          <div *ngIf="productquantity.errors?.required && productquantity.touched" class="alert alert-danger">Product Quantity is Required</div>
+        </div>
+
+        <div class="form-group">
           <label for="PhotoLabel">Product Photo</label>
           <input type="text" class="form-control upload" id="PhotoLabel" name="photo" placeholder="Enter Photo name ex car.jpg" accept=".jpg, .jpeg, .png"
             [(ngModel)]="product.photo" #productphoto="ngModel" required>

@@ -16,7 +16,8 @@ export class EditProductComponent implements OnInit {
   product: Product = {
     name: '',
     country: '',
-    price: 0
+    price: 0,
+    quantity: 0
   };
 
   constructor(

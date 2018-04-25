@@ -35,7 +35,7 @@
             <form novalidate>
               <input type="number" class="form-control" name="desiredQty" min="1" max="20" [(ngModel)]="order.desiredQty" #orderdesiredQty="ngModel"
                 required>
-              <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#myModal" (click)="addToCart()">add to cart</button>
+              <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#myModal" (click)="addToCart()">Add To Cart</button>
             </form>
           </div>
         </div>
@@ -78,7 +78,7 @@
 
           <!-- Modal footer -->
           <div class="modal-footer">
-            <a class="btn btn-primary" (click)="goToCheckOut(userProduct)">view cart</a>
+            <a class="btn btn-primary" (click)="goToCheckOut(userProduct)">Add To Cart</a>
           </div>
 
         </div>
