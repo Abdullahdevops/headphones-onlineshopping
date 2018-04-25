@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { CartService } from '../../services/cart.service';
+import { AuthService } from '../../services/auth.service';
+import { FlashMessagesService } from 'angular2-flash-messages';
+import { Cart } from '../../Cart';
 
 @Component({
   selector: 'app-cart',
@@ -7,9 +11,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CartComponent implements OnInit {
 
-  constructor() { }
+  cart: Cart[];
+
+  constructor(public cartService: CartService, public flashMessagesService: FlashMessagesService) {
+  }
 
   ngOnInit() {
+    this.cartService.getUserProducts().subscribe(items => {
+      this.cart = items;
+    });
   }
 
 }

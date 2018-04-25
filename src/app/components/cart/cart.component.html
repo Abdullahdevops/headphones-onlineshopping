@@ -1,3 +1,42 @@
-<p>
-  cart works!
-</p>
+<section class="cart-wrapper">
+  <div class="container">
+
+    <div *ngIf="cart?.length>0 ; else elseBlock">
+      <!-- <button href="#" (click)="deleteAllProducts()" class="btn btn-danger">
+        <i class="fa fa-info-circle"></i> Delete All
+      </button> -->
+      <table class="table table-bordered table-dark">
+        <thead>
+          <tr>
+            <th scope="col">Product Name</th>
+            <th scope="col">Product Photo</th>
+            <th scope="col">Product Price</th>
+            <th scope="col">Product Quantity</th>
+            <th scope="col">Total</th>
+            <th scope="col">User Email</th>
+            <!-- <th>manage</th> -->
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of cart">
+            <td>{{item.productName}}</td>
+            <td>
+              <img src="./assets/img/{{item.productPhoto}}" class="normal-img" alt="product headphone">
+            </td>
+            <td>{{item.productPrice}}</td>
+            <td>{{item.productQuantity}}</td>
+            <td>{{item.total}}</td>
+            <td>{{item.userEmail}}</td>
+            <!-- <td>
+              <a class="btn btn-primary" [routerLink]="['/product/'+item.$key]">
+                <i class="fa fa-info-circle"></i> More Info</a>
+            </td> -->
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <ng-template #elseBlock>
+      <h2 class="text-warning">Your Cart is Empty</h2>
+    </ng-template>
+  </div>
+</section>

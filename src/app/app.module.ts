@@ -29,9 +29,11 @@ import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.co
 
 import { ProductsService } from './services/products.service';
 import { AuthService } from './services/auth.service';
+import { CartService } from './services/cart.service';
 import { AuthGuard } from './guards/auth.guard';
 import { CartComponent } from './components/cart/cart.component';
 import { SignupComponent } from './components/signup/signup.component';
+import { SigninComponent } from './components/signin/signin.component';
 
 export const firebaseConfig = {
   apiKey: 'AIzaSyBrtlnRJMHelhlBEANHZb3IC3zpkMcvNgY',
@@ -48,7 +50,8 @@ const appRoutes: Routes = [
   {path: 'product-details/:id', component: ProductDetailsComponent},
   {path: 'admin-panel/login', component: LoginComponent},
   {path: 'signup', component: SignupComponent},
-  {path: 'cart', component: CartComponent},
+  {path: 'signin', component: SigninComponent},
+  {path: 'cart', component: CartComponent, canActivate: [AuthGuard]},
   {path: 'admin-panel/dashboard', component: DashboardComponent, canActivate: [AuthGuard]},
   {path: 'admin-panel/addproduct', component: AddProductComponent, canActivate: [AuthGuard]},
   {path: 'admin-panel/list-products', component: ListProductsComponent, canActivate: [AuthGuard]},
@@ -78,7 +81,8 @@ const appRoutes: Routes = [
     EditProductComponent,
     ProductDetailsComponent,
     CartComponent,
-    SignupComponent
+    SignupComponent,
+    SigninComponent
   ],
   imports: [
     BrowserModule,
@@ -91,6 +95,7 @@ const appRoutes: Routes = [
     AngularFireAuth,
     AngularFireDatabase,
     ProductsService,
+    CartService,
     AuthService,
     AuthGuard
   ],

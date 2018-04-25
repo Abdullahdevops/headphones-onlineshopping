@@ -1,9 +1,29 @@
 @import '../../../sass/variables';
 @import '../../../sass/mixins';
+.cart-wrapper {
+  background-color: #fff;
+  padding-bottom: 30px;
+  padding-top: 140px;
+}
 
+h1.sec-title {
+  @include secTitle;
+  margin-top: 20px;
+}
 
-p {
-    color: #fff;
-    font-size: 60px;
-    margin-top: 130px;
+h1 {
+  @include titleBorder;
+}
+
+table td:last-child {
+  width: 140px
+}
+
+table td {
+  text-transform: capitalize
+}
+
+.normal-img {
+    width: 90px;
+    height: 90px;
 }

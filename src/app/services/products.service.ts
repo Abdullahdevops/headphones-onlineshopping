@@ -30,11 +30,11 @@ export class ProductsService {
     return this.products.update(id, product);
   }
 
-  deleteProduct(id: string) {
+  deleteProduct(id: string){
     return this.products.remove(id);
   }
 
-  deleteAllProducts() {
+  deleteAllProducts(){
     return this.products.remove();
   }
 

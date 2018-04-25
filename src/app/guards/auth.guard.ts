@@ -16,7 +16,7 @@ export class AuthGuard implements CanActivate {
     canActivate(): Observable<boolean> {
         return this.afAuth.authState.map(auth => {
             if (!auth) {
-                this.router.navigate(['/admin-panel/login']);
+                this.router.navigate(['/signin']);
                 return false;
             } else {
                 return true;

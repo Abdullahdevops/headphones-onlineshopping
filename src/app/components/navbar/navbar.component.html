@@ -18,10 +18,10 @@
         <a class="nav-link" routerLink="/products" routerLinkActive="active">products</a>
       </li>
       <li class="nav-item" *ngIf="!isLoggedin">
-        <a class="nav-link" routerLink="/signup" routerLinkActive="active">sign up</a>
+        <a class="nav-link" routerLink="/signin" routerLinkActive="active">sign in</a>
       </li>
       <li class="nav-item" *ngIf="!isLoggedin">
-        <a class="nav-link" routerLink="/signup" routerLinkActive="active">sign in</a>
+        <a class="nav-link" routerLink="/signup" routerLinkActive="active">sign up</a>
       </li>
       <!-- <li class="nav-item sbb" *ngIf="!isUserLoggedin">
         <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" viewBox="8.3 0 105.5 126.1" preserveAspectRatio="xMinYMax meet"
@@ -33,6 +33,9 @@
       </li> -->
       <li class="nav-item" *ngIf="isLoggedin">
         <span class="nav-link" routerLink="/admin-panel/dashboard">{{isUserLoggedin}}</span>
+      </li>
+      <li class="nav-item" *ngIf="isLoggedin">
+        <a class="nav-link" routerLink="/cart">Cart</a>
       </li>
       <li class="nav-item" *ngIf="isLoggedin">
           <a class="nav-link" (click)='logoutClick()'>Logout</a>
