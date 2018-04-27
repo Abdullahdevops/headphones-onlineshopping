@@ -27,6 +27,8 @@ export class ProductDetailsComponent implements OnInit {
   isLoggedin;
   isUserLoggedin;
 
+  few;
+
   constructor(
     public productsService: ProductsService,
     public router: Router,

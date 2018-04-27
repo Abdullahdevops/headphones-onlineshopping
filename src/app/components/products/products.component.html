@@ -4,6 +4,21 @@
       our
       <br> products
     </h1>
+    <!-- <div class="form-group">
+      <select [(ngModel)]="itemPrice" (click)="search(itemPrice)">
+        <option value="">Please select a price</option> 
+        <option value="100">> 100</option>
+        <option value="200">> 200</option>
+        <option value="300">> 300</option>
+        <option value="600">> 600</option>
+      </select>
+    </div> -->
+    <div class="form-group">
+      <label>Find The Suitable Price</label>
+      <br>
+      <input type="text" [(ngModel)]="itemPrice">
+      <button (click)="search(itemPrice)" class="btn btn-filter">Filter</button>
+    </div>
     <div *ngIf="products?.length>0 ; else elseBlock">
       <div class="products-wrapper">
         <div class="row">
@@ -15,6 +30,7 @@
               </a>
             </div>
             <div class="product-desc">
+              <h5 [hidden]="item.quantity > 1" class="text-danger">out of stock</h5>
               <h5>{{item.name}}</h5>
               <p>${{item.price}}</p>
             </div>
@@ -23,7 +39,7 @@
       </div>
     </div>
     <ng-template #elseBlock>
-      <h2 class="text-warning">Weak Connection</h2>
+      <h2 class="text-info product-desc">This page has no products to show at the moment</h2>
     </ng-template>
   </div>
 </section>

@@ -3,16 +3,19 @@ import { AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable }
 import { Observable } from 'rxjs/Observable';
 import { Cart } from '../Cart';
 import { AuthService } from './auth.service';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Injectable()
 export class CartService {
 
   carts: FirebaseListObservable<any[]>;
   cart: FirebaseObjectObservable<any>;
+  cartItem;
 
   isUserLoggedin;
 
-  constructor(public db: AngularFireDatabase, public authService: AuthService) {
+  constructor(public db: AngularFireDatabase, public authService: AuthService, public router: Router,
+    public activatedRouter: ActivatedRoute) {
     this.carts = this.db.list('/carts') as FirebaseListObservable<Cart[]>;
     this.authService.getAuth().subscribe(auth => {
       if (auth) {
@@ -33,12 +36,8 @@ export class CartService {
     return this.carts;
   }
 
-  getUserProduct(id: string) {
-    this.cart = this.db.object('/carts/' + id) as FirebaseObjectObservable<Cart>;
-    return this.cart;
-  }
-
-  deleteUserProduct(id: string) {
+  deleteUserProduct(id) {
     return this.carts.remove(id);
   }
+
 }

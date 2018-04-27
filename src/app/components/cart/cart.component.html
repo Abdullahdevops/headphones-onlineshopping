@@ -2,10 +2,7 @@
   <div class="container">
 
     <div *ngIf="cart?.length>0 ; else elseBlock">
-      <!-- <button href="#" (click)="deleteAllProducts()" class="btn btn-danger">
-        <i class="fa fa-info-circle"></i> Delete All
-      </button> -->
-      <table class="table table-bordered table-dark">
+      <table class="table table-bordered">
         <thead>
           <tr>
             <th scope="col">Product Name</th>
@@ -28,15 +25,15 @@
             <td>{{item.total}}</td>
             <td>{{item.userEmail}}</td>
             <td>
-              <a class="btn btn-primary" (click)="deleteProduct()">
-                <i class="fa fa-info-circle"></i>Remove</a>
+              <a class="btn btn-danger" (click)="deleteProduct()">
+                <i class="fa fa-info-circle"></i> &nbsp;Remove</a>
             </td>
           </tr>
         </tbody>
       </table>
     </div>
     <ng-template #elseBlock>
-      <h2 class="text-warning">Your Cart is Empty</h2>
+      <h2 class="text-info">Your Cart is Empty</h2>
     </ng-template>
   </div>
 </section>

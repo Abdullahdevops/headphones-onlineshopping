@@ -1,62 +1,80 @@
 @import '../../../sass/variables';
 @import '../../../sass/mixins';
 .products {
-    background-color: #fff;
-    margin-top: 90px;
-    padding-bottom: 50px
+  background-color: #fff;
+  margin-top: 90px;
+  padding-bottom: 50px
 }
 
 h1.sec-title {
-    @include secTitle;
-    padding-top: 52px;
+  @include secTitle;
+  padding-top: 52px;
 }
 
 h1 {
-    @include titleBorder;
+  @include titleBorder;
 }
 
 .product {
-    position: relative;
-    overflow: hidden
+  position: relative;
+  overflow: hidden
 }
 
 .product img {
-    width: 100%;
-    height: 100%;
-    transition-duration: 0.2s;
+  width: 100%;
+  height: 100%;
+  transition-duration: 0.2s;
 }
 
 .product .zoomed-img {
-    opacity: 0;
-    position: absolute;
-    top: 0;
-    left: 0;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .product:hover {
-    .zoomed-img {
-        opacity: 1;
-    }
-    .normal-img {
-        opacity: 0;
-    }
-} 
+  .zoomed-img {
+    opacity: 1;
+  }
+  .normal-img {
+    opacity: 0;
+  }
+}
 
 /* .product img:hover {
     transform: scale(1.2, 1.2);
 } */
 
 .product-desc {
-    margin-top: 13px;
+  margin-top: 13px;
 }
 
-.product-desc h5{
-    @include paragraphTitle;
-    font-size: 19px;
-    text-transform: capitalize;
+.product-desc h5, h2 {
+  @include paragraphTitle;
+  font-size: 19px;
+  text-transform: capitalize;
 }
 
 .product-desc p {
-    @include paragraphBody;
-    font-size: 15px;
+  @include paragraphBody;
+  font-size: 15px;
+}
+
+.form-group {
+  margin-bottom: 29px;
+}
+
+.form-group label {
+  @include formLabel;
+  margin-bottom: 0;
+}
+
+.form-group input {
+  height: 40px;
+}
+
+.btn-filter {
+  @include formSubmitBtn;
+  margin-top: -2px;
 }

@@ -24,6 +24,22 @@ table td {
 }
 
 .normal-img {
-    width: 90px;
+    width: 84px;
     height: 90px;
+}
+
+h2, th, td {
+  @include paragraphTitle;
+  text-transform: capitalize;
+  color: #333;
+  text-align: center;
+}
+
+td {
+
+  line-height: 90px;
+}
+
+table {
+  background: none;
 }
