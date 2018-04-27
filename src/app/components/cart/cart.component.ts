@@ -29,16 +29,16 @@ export class CartComponent implements OnInit {
   }
 
   deleteProduct (key, qty, id) {
-    /* this.productsService.getProduct(id).subscribe(product => {
-      this.product = product;
-      this.product.quantity += qty;
-      this.product = {
-        quantity: this.product.quantity
-      };
-      this.productsService.updateProduct(id, this.product);
-    }); */
     if ( this.cartService.deleteUserProduct(key) ) {
       this.flashMessagesService.show('Product Removed From Your Cart!', { cssClass: 'alert-info', timeout: 3000});
+      /* this.productsService.getProduct(id).subscribe(product => {
+        this.product = product;
+        this.product.quantity = this.product.quantity + qty;
+        this.product = {
+          quantity: this.product.quantity
+        };
+        this.productsService.updateProduct(id, this.product);
+      }); */
     }
   }
 }
