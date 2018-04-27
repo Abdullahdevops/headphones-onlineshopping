@@ -27,8 +27,6 @@ export class ProductDetailsComponent implements OnInit {
   isLoggedin;
   isUserLoggedin;
 
-  few;
-
   constructor(
     public productsService: ProductsService,
     public router: Router,
@@ -55,7 +53,7 @@ export class ProductDetailsComponent implements OnInit {
 
   addToCart () {
     if (!this.isLoggedin) {
-      this.flashMessagesService.show('please login first!', { cssClass: 'alert-success', timeout: 3000});
+      this.flashMessagesService.show('Please Login First!', { cssClass: 'alert-success', timeout: 3000});
       this.router.navigate(['/signin']);
     }
   }
@@ -75,13 +73,12 @@ export class ProductDetailsComponent implements OnInit {
       this.product = {
         quantity: this.product.quantity
       };
-    console.log('rest = ' + this.product);
     this.productsService.updateProduct(this.id, this.product);
     this.cartService.addUserProducts(userProduct);
-    this.flashMessagesService.show('product added succefully!', { cssClass: 'alert-success', timeout: 3000});
+    this.flashMessagesService.show('Product Added To Your Cart!', { cssClass: 'alert-success', timeout: 3000});
     // this.router.navigate(['/cart']);
     } else {
-      this.flashMessagesService.show('Sorry canot add product not enough quantity!', { cssClass: 'alert-danger', timeout: 3000});
+      this.flashMessagesService.show('Sorry, Out Of Stock!', { cssClass: 'alert-danger', timeout: 3000});
     }
   }
 

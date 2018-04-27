@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from '../../services/cart.service';
-import { AuthService } from '../../services/auth.service';
 import { FlashMessagesService } from 'angular2-flash-messages';
 import { Cart } from '../../Cart';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ProductsService } from '../../services/products.service';
+import { Product } from '../../Product';
 
 @Component({
   selector: 'app-cart',
@@ -13,9 +13,13 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class CartComponent implements OnInit {
 
   cart: Cart[];
+  product: Product = {
+    name: '',
+    country: '',
+    price: 0
+  };
 
-  constructor(public cartService: CartService, public router: Router,
-    public activatedRouter: ActivatedRoute, public flashMessagesService: FlashMessagesService) {
+  constructor(public cartService: CartService, public productsService: ProductsService, public flashMessagesService: FlashMessagesService) {
   }
 
   ngOnInit() {
@@ -24,4 +28,17 @@ export class CartComponent implements OnInit {
     });
   }
 
+  deleteProduct (key, qty, id) {
+    /* this.productsService.getProduct(id).subscribe(product => {
+      this.product = product;
+      this.product.quantity += qty;
+      this.product = {
+        quantity: this.product.quantity
+      };
+      this.productsService.updateProduct(id, this.product);
+    }); */
+    if ( this.cartService.deleteUserProduct(key) ) {
+      this.flashMessagesService.show('Product Removed From Your Cart!', { cssClass: 'alert-info', timeout: 3000});
+    }
+  }
 }

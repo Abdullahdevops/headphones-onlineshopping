@@ -10,8 +10,6 @@ export class CartService {
 
   carts: FirebaseListObservable<any[]>;
   cart: FirebaseObjectObservable<any>;
-  cartItem;
-
   isUserLoggedin;
 
   constructor(public db: AngularFireDatabase, public authService: AuthService, public router: Router,
