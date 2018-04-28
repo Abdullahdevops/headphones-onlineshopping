@@ -13,11 +13,7 @@ import { Product } from '../../Product';
 export class CartComponent implements OnInit {
 
   cart: Cart[];
-  product: Product = {
-    name: '',
-    country: '',
-    price: 0
-  };
+  product: Product;
 
   constructor(public cartService: CartService, public productsService: ProductsService, public flashMessagesService: FlashMessagesService) {
   }
@@ -29,16 +25,9 @@ export class CartComponent implements OnInit {
   }
 
   deleteProduct (key, qty, id) {
-    if ( this.cartService.deleteUserProduct(key) ) {
-      this.flashMessagesService.show('Product Removed From Your Cart!', { cssClass: 'alert-info', timeout: 3000});
-      /* this.productsService.getProduct(id).subscribe(product => {
-        this.product = product;
-        this.product.quantity = this.product.quantity + qty;
-        this.product = {
-          quantity: this.product.quantity
-        };
-        this.productsService.updateProduct(id, this.product);
-      }); */
-    }
+    this.cartService.deleteUserProduct(key);
+    this.flashMessagesService.show('Product Removed From Your Cart!', { cssClass: 'alert-info', timeout: 3000});
   }
+
 }
+

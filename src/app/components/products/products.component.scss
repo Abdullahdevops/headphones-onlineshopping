@@ -42,6 +42,19 @@ h1 {
   }
 }
 
+.fa-heart-o {
+  float: right;
+  cursor: pointer;
+}
+
+.rate {
+  float: right;
+}
+
+.highlighted { 
+  color: deeppink;
+}
+
 /* .product img:hover {
     transform: scale(1.2, 1.2);
 } */

@@ -26,14 +26,16 @@ import { SidebarComponent } from './components/admin-panel/sidebar/sidebar.compo
 import { ListProductsComponent } from './components/admin-panel/list-products/list-products.component';
 import { EditProductComponent } from './components/admin-panel/edit-product/edit-product.component';
 import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
-
-import { ProductsService } from './services/products.service';
-import { AuthService } from './services/auth.service';
-import { CartService } from './services/cart.service';
-import { AuthGuard } from './guards/auth.guard';
 import { CartComponent } from './components/cart/cart.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { SigninComponent } from './components/signin/signin.component';
+
+import { AuthService } from './services/auth.service';
+import { ProductsService } from './services/products.service';
+import { CartService } from './services/cart.service';
+import { PaymentService } from './services/payment.service';
+import { AuthGuard } from './guards/auth.guard';
+import { PaymentRequestComponent } from './components/payment-request/payment-request.component';
 
 export const firebaseConfig = {
   apiKey: 'AIzaSyBrtlnRJMHelhlBEANHZb3IC3zpkMcvNgY',
@@ -46,6 +48,7 @@ export const firebaseConfig = {
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
+  {path: 'pay', component: PaymentRequestComponent},
   {path: 'products', component: ProductsComponent},
   {path: 'product-details/:id', component: ProductDetailsComponent},
   {path: 'admin-panel/login', component: LoginComponent},
@@ -82,7 +85,8 @@ const appRoutes: Routes = [
     ProductDetailsComponent,
     CartComponent,
     SignupComponent,
-    SigninComponent
+    SigninComponent,
+    PaymentRequestComponent
   ],
   imports: [
     BrowserModule,
@@ -97,7 +101,8 @@ const appRoutes: Routes = [
     ProductsService,
     CartService,
     AuthService,
-    AuthGuard
+    AuthGuard,
+    PaymentService
   ],
   bootstrap: [AppComponent]
 })

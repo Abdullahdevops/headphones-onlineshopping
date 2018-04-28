@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ProductsService } from '../../services/products.service';
 import { Product } from '../../Product';
 import { FlashMessagesService } from 'angular2-flash-messages';
@@ -12,7 +12,9 @@ export class ProductsComponent implements OnInit {
 
   products: Product[];
   itemPrice;
-  result = [];
+
+  @Input('likesCount') likesCount = 0;
+  @Input('isActive') isActive = false;
 
   constructor(public productsService: ProductsService, public flashMessagesService: FlashMessagesService) { }
 
@@ -35,6 +37,14 @@ export class ProductsComponent implements OnInit {
       });
     }
     return this.products ;
+  }
+
+  rating (id) {
+    this.isActive = !this.isActive;
+    this.likesCount += (this.isActive) ? 1 : -1;
+    this.productsService.getProduct(id).update({
+      rate: this.likesCount
+    });
   }
 
   /* filter (itemPrice) {

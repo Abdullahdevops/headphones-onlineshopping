@@ -6,4 +6,5 @@ export interface Product {
     quantity?: number;
     photo?: HTMLImageElement;
     zoomedPhoto?: HTMLImageElement;
+    rate?: number;
 }

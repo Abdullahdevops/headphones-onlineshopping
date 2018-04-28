@@ -31,8 +31,9 @@
             </div>
             <div class="product-desc">
               <h5 [hidden]="item.quantity > 1" class="text-danger">out of stock</h5>
-              <h5>{{item.name}}</h5>
-              <p>${{item.price}}</p>
+              <h5>{{item.name}}
+                <span class="fa fa-heart-o" [class.highlighted]="item.rate == 1" (click)="rating(item.$key)"></span></h5>
+              <p>${{item.price}} <span class="rate">{{item.rate}}</span></p>
             </div>
           </div>
         </div>
