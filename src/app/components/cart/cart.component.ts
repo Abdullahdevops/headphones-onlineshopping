@@ -14,6 +14,7 @@ export class CartComponent implements OnInit {
 
   cart: Cart[];
   product: Product;
+  item: Cart;
 
   constructor(public cartService: CartService, public productsService: ProductsService, public flashMessagesService: FlashMessagesService) {
   }

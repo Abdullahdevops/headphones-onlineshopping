@@ -40,7 +40,7 @@ export class EditProductComponent implements OnInit {
       this.router.navigate(['/edit-product/' + this.id]);
     } else {
       this.productsService.updateProduct(this.id, value);
-      this.flashMessagesService.show('Employee updated successfully', { cssClass: 'alert-success', timeout: 3000});
+      this.flashMessagesService.show('Product updated successfully', { cssClass: 'alert-success', timeout: 3000});
       this.router.navigate(['/product/' + this.id]);
     }
   }

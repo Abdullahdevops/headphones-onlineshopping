@@ -27,6 +27,8 @@ export class ProductDetailsComponent implements OnInit {
   isLoggedin;
   isUserLoggedin;
 
+  orderQuantity;
+
   constructor(
     public productsService: ProductsService,
     public router: Router,
@@ -53,8 +55,14 @@ export class ProductDetailsComponent implements OnInit {
 
   addToCart () {
     if (!this.isLoggedin) {
-      this.flashMessagesService.show('Please Login First!', { cssClass: 'alert-success', timeout: 3000});
+      this.flashMessagesService.show('Please Login First!', { cssClass: 'alert-info', timeout: 3000});
       this.router.navigate(['/signin']);
+    }
+    if (this.order.desiredQty < 1) {
+      this.orderQuantity = true;
+      this.flashMessagesService.show('Please select a value that is no less than 1!', { cssClass: 'alert-warning', timeout: 6000});
+    } else {
+      this.orderQuantity = false;
     }
   }
 
@@ -78,7 +86,12 @@ export class ProductDetailsComponent implements OnInit {
     this.flashMessagesService.show('Product Added To Your Cart!', { cssClass: 'alert-success', timeout: 3000});
     // this.router.navigate(['/cart']);
     } else {
-      this.flashMessagesService.show('Sorry, Out Of Stock!', { cssClass: 'alert-danger', timeout: 3000});
+      this.orderQuantity = this.product.quantity - 1;
+      if (this.orderQuantity) {
+      this.flashMessagesService.show('U can have at MAX ' + this.orderQuantity + ' Pieces', { cssClass: 'alert-danger', timeout: 3000});
+      } else if (this.product.quantity = 1) {
+      this.flashMessagesService.show('Sorry, Out Of Stock', { cssClass: 'alert-danger', timeout: 3000});
+      }
     }
   }
 

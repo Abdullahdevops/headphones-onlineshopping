@@ -78,7 +78,7 @@
 
           <!-- Modal footer -->
           <div class="modal-footer">
-            <a class="btn btn-primary" (click)="goToCheckOut(userProduct)">Add To Cart</a>
+            <a class="btn btn-primary" (click)="goToCheckOut(userProduct)" [hidden]="orderQuantity">Add To Cart</a>
           </div>
 
         </div>

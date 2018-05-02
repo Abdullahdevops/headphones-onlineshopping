@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ProductsService } from '../../services/products.service';
 import { Product } from '../../Product';
 import { FlashMessagesService } from 'angular2-flash-messages';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-products',
@@ -13,14 +14,28 @@ export class ProductsComponent implements OnInit {
   products: Product[];
   itemPrice;
 
+  isLoggedin;
+  isUserLoggedin;
+
   @Input('likesCount') likesCount = 0;
   @Input('isActive') isActive = false;
 
-  constructor(public productsService: ProductsService, public flashMessagesService: FlashMessagesService) { }
+  constructor(
+    public productsService: ProductsService,
+    public authService: AuthService,
+    public flashMessagesService: FlashMessagesService) { }
 
   ngOnInit() {
     this.productsService.getProducts().subscribe(products => {
       this.products = products;
+    });
+    this.authService.getAuth().subscribe(auth => {
+      if (auth) {
+        this.isLoggedin = true;
+        this.isUserLoggedin = auth.email;
+      } else {
+        this.isLoggedin = false;
+      }
     });
   }
 
