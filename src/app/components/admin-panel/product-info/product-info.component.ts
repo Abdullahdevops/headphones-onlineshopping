@@ -11,7 +11,7 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 })
 export class ProductInfoComponent implements OnInit {
 
-  id: string;
+  id: string; 
   product: Product;
 
   constructor(
